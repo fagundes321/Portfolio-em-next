@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { slideInFromTop } from '@/utils/motion';
 
 const HeroContent = () => {
   return (
@@ -10,7 +11,8 @@ const HeroContent = () => {
     >
         <div className = 'h-full w-full flex flex-col gap-5 justify-center m-auto text-start'>
             <motion.div
-            className = 'welcome-bos py-[15px] px-[15px] boder border-[]'
+            variants = {slideInFromTop}
+            className = 'welcome-bos py-[15px] px-[15px] boder border-[#7042f88b] opacity-[0.9]'
             >
 
             </motion.div>
