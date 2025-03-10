@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import { TypeAnimation } from "react-type-animation";
 
 const HeroSection = () => {
   return (
@@ -11,22 +13,43 @@ const HeroSection = () => {
           </h1>
           <h1 className="text-white mb-4 text-3xl lg:text-4xl font-bold">
             Sou Victor Fagundes
-            <h1 className="text-[#7cf03d] mb-4 text-3xl mb-6 lg:text-4xl font-bold">
-              Desenvolvedor Front-end
-            </h1>
           </h1>
-
+          <h1 className="text-[#7cf03d]  mb-4 text-3xl lg:text-4xl font-bold">
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#5CBF2A] via-[#7CF03D] to-[#2E6B1A]">
+              Desenvolvedor {""}
+            </span>
+            <TypeAnimation
+              sequence={[
+                "Web",
+                1000,
+                "Front-end",
+                1000,
+                "Back-end!",
+                1000,
+                "Full Stack",
+                1000,
+              ]}
+              wrapper="span"
+              speed={30}
+              style={{
+                fontSize: "1em",
+                display: "inline-block",
+                color: "white",
+              }}
+              repeat={Infinity}
+            />
+          </h1>
+          <br />
           <img
             src="https://skillicons.dev/icons?i=next,react,angular,tailwind,js,ts,docker,linux"
             alt="Tecnologias"
           />
-
+          <br />
           <div>
-            <button className="px-6 py-3 rounded-full mr-4 bg-white hover:bg-slate-200 text-black">
-              Hire me
-            </button>
-            <button className="px-6 py-3 rounded-full bg tranparent hover:bg-slate-800 border border-white mt-3">
-              Download CV
+            <button className="cursor-pointer px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-[#7CF03D] via-[#5CBF2A] to-[#3D8F1F] hover:bg-slate-800 text=white mt-3">
+              <span className="block bg-[#1f242d] hover:bg-slate-800 rounded-full px-5 py-2">
+                Download CV
+              </span>
             </button>
           </div>
         </div>
