@@ -1,5 +1,21 @@
 import React from "react";
 import Link from "next/link";
+import NavLink from "./NavLink";
+
+const navLinks = [
+  {
+    title: "Sobre",
+    path: "#sobre",
+  },
+  {
+    title: "Projetos",
+    path: "projetos",
+  },
+  {
+    title: "Contato",
+    path: "contato"
+  }
+]
 
 const Navbar = () => {
   return (
@@ -8,16 +24,16 @@ const Navbar = () => {
         <Link href="/" className="text-5xl text-white font-semibold">
           LOGO
         </Link>
-        <div className="menu hidden md:block md:w-auto" id="navbar">
+        <div className="menu block md:w-auto" id="navbar">
           <ul>
-            <li>
-              <Link
-                href="#about"
-                className="block py-2 pl-3 pr-4 text-[#ADB7BE] sm:text-xl rounded md:p-0 hover:text-white"
-              >
-                About
-              </Link>
-            </li>
+              {
+                  navLinks.map((link, index) => (
+                    <li key={index}>
+                      <NavLink href={link.path} title={link.title}/>
+                    </li>
+                  )
+                )
+              }
           </ul>
         </div>
       </div>
