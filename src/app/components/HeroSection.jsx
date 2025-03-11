@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
+import "boxicons/css/boxicons.min.css";
 
 const HeroSection = () => {
   return (
@@ -45,16 +46,44 @@ const HeroSection = () => {
             alt="Tecnologias"
           />
           <br />
-          <div>
-            <button className="cursor-pointer w-full sm:w-fit rounded-full p-1 bg-[#1f242d]  mt-3 transition-all duration-500 hover:bg-gradient-to-br hover:from-[#7CF03D] hover:via-[#5CBF2A] hover:to-[#3D8F1F]">
-              <span className="block bg-gradient-to-br bg-[#7CF03D] text-[#1f242d] rounded-full px-5 py-2 shadow-[0_0_10px_#7cf03d]  border-[#7CF03D] transition-all duration-500 hover:bg-[#1f242d] hover:text-[#7CF03D] hover:shadow-none">
-                Download CV
-              </span>
+          <div className="flex flex-col sm:flex-row gap-4 items-center">
+            {/* Botão de Download */}
+            <button className="flex items-center justify-center w-fit px-6 py-3 gap-3 border-2 border-[#7CF03D] text-[#7CF03D] rounded-full text-lg font-extrabold transition-all duration-300 hover:bg-[#7CF03D] hover:text-[#1f242d] hover:shadow-[0_0_10px_#7CF03D]">
+              Download CV
+              <i className='bx bx-download text-2xl'></i>
             </button>
+
+            {/* Ícones Sociais */}
+            <div className="flex items-center gap-4">
+              <a
+                href="https://github.com/fagundes321"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-12 h-12 border-2 border-[#7CF03D] text-[#7CF03D] rounded-full text-2xl transition-all duration-300 hover:bg-[#7CF03D] hover:text-[#1f242d] hover:shadow-[0_0_10px_#7CF03D]"
+              >
+                <i className="bx bxl-github"></i>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/victor-fagundes-324070259/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-12 h-12 border-2 border-[#7CF03D] text-[#7CF03D] rounded-full text-2xl transition-all duration-300 hover:bg-[#7CF03D] hover:text-[#1f242d] hover:shadow-[0_0_10px_#7CF03D]"
+              >
+                <i className="bx bxl-linkedin"></i>
+              </a>
+
+              <a
+                href="mailto:victorfagundes123@gmail.com?subject=Contato%20via%20Portfólio&body=Olá%20Victor,%20gostaria%20de%20falar%20com%20você!"
+                className="flex items-center justify-center w-12 h-12 border-2 border-[#7CF03D] text-[#7CF03D] rounded-full text-2xl transition-all duration-300 hover:bg-[#7CF03D] hover:text-[#1f242d] hover:shadow-[0_0_10px_#7CF03D]"
+              >
+                <i className="bx bxl-gmail"></i>
+              </a>
+            </div>
           </div>
         </div>
         <div className="col-span-5 place-self-center mt-4 lg:mt-0">
-          <div className="rounded-full overflow-hidden bg-[#181818] w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] relative">
+          <div className="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] rounded-full overflow-hidden bg-[#181818] animate-rotate-border">
             <Image
               src="/images/hero-image.jpg"
               alt="Minha foto"
@@ -62,6 +91,7 @@ const HeroSection = () => {
               width={500}
               height={500}
             />
+            <div className="absolute inset-0 border-4 border-transparent bg-conic-gradient from-transparent via-transparent to-[#7cf03d] rounded-full"></div>
           </div>
         </div>
       </div>
