@@ -42,7 +42,7 @@ const HeroSection = () => {
             />
           </h1>
           <br />
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-4">
             <img
               src="https://skillicons.dev/icons?i=next"
               alt="Next.js"
@@ -64,9 +64,24 @@ const HeroSection = () => {
               className="w-12 h-12 transition-transform duration-300 hover:skew-x-12"
             />
             <img
-              src="https://skillicons.dev/icons?i=html"
-              alt="Tailwind CSS"
-              className="w-12 h-12 transition-transform duration-300 hover:skew-x-12"
+              src="https://skillicons.dev/icons?i=js"
+              alt="JavaScript"
+              className="w-12 h-12 transition-transform duration-300 hover:scale-125"
+            />
+            <img
+              src="https://skillicons.dev/icons?i=ts"
+              alt="TypeScript"
+              className="w-12 h-12 transition-transform duration-300 hover:-rotate-12"
+            />
+            <img
+              src="https://skillicons.dev/icons?i=docker"
+              alt="Docker"
+              className="w-12 h-12 transition-transform duration-300 hover:translate-x-2"
+            />
+            <img
+              src="https://skillicons.dev/icons?i=linux"
+              alt="Linux"
+              className="w-12 h-12 transition-transform duration-300 hover:scale-110 hover:rotate-6"
             />
           </div>
 
