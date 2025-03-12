@@ -3,12 +3,13 @@ import React from "react";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import "boxicons/css/boxicons.min.css";
+import "animate.css";
 
 const HeroSection = () => {
   return (
     <section>
       <div className="grid items-center grid-cols-1 sm:grid-cols-12 h-[85vh]">
-        <div className="col-span-7 text-center sm:text-left">
+        <div className="col-span-7 text-center sm:text-left animate__animated animate__slow animate__fadeInLeft">
           <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold">
             Seja Bem-Vindo!
           </h1>
@@ -41,16 +42,40 @@ const HeroSection = () => {
             />
           </h1>
           <br />
-          <img
-            src="https://skillicons.dev/icons?i=next,react,angular,tailwind,js,ts,docker,linux"
-            alt="Tecnologias"
-          />
+          <div className="flex gap-4">
+            <img
+              src="https://skillicons.dev/icons?i=next"
+              alt="Next.js"
+              className="w-12 h-12 transition-transform duration-300 hover:scale-110"
+            />
+            <img
+              src="https://skillicons.dev/icons?i=react"
+              alt="React"
+              className="w-12 h-12 transition-transform duration-300 hover:rotate-12"
+            />
+            <img
+              src="https://skillicons.dev/icons?i=angular"
+              alt="Angular"
+              className="w-12 h-12 transition-transform duration-300 hover:translate-y-2"
+            />
+            <img
+              src="https://skillicons.dev/icons?i=tailwind"
+              alt="Tailwind CSS"
+              className="w-12 h-12 transition-transform duration-300 hover:skew-x-12"
+            />
+            <img
+              src="https://skillicons.dev/icons?i=html"
+              alt="Tailwind CSS"
+              className="w-12 h-12 transition-transform duration-300 hover:skew-x-12"
+            />
+          </div>
+
           <br />
           <div className="flex flex-col sm:flex-row gap-4 items-center">
             {/* Botão de Download */}
             <button className="flex items-center justify-center w-fit px-6 py-3 gap-3 border-2 border-[#7CF03D] text-[#7CF03D] rounded-full text-lg font-extrabold transition-all duration-300 hover:bg-[#7CF03D] hover:text-[#1f242d] hover:shadow-[0_0_10px_#7CF03D]">
               Download CV
-              <i className='bx bx-download text-2xl'></i>
+              <i className="bx bx-download text-2xl"></i>
             </button>
 
             {/* Ícones Sociais */}
@@ -82,7 +107,7 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-        <div className="col-span-5 place-self-center mt-4 lg:mt-0">
+        <div className="col-span-5 place-self-center mt-4 lg:mt-0 animate__animated animate__slow animate__fadeInRight">
           <div className="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] rounded-full overflow-hidden bg-[#181818] animate-rotate-border">
             <Image
               src="/images/hero-image.jpg"
