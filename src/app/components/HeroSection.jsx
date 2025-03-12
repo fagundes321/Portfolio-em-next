@@ -66,22 +66,22 @@ const HeroSection = () => {
             <img
               src="https://skillicons.dev/icons?i=js"
               alt="JavaScript"
-              className="w-12 h-12 transition-transform duration-300 hover:scale-125"
+              className="w-12 h-12 transition-transform duration-300 hover:scale-125 hover:rotate-3"
             />
             <img
               src="https://skillicons.dev/icons?i=ts"
               alt="TypeScript"
-              className="w-12 h-12 transition-transform duration-300 hover:-rotate-12"
+              className="w-12 h-12 transition-transform duration-300 hover:-rotate-12 hover:translate-y-1"
             />
             <img
               src="https://skillicons.dev/icons?i=docker"
               alt="Docker"
-              className="w-12 h-12 transition-transform duration-300 hover:translate-x-2"
+              className="w-12 h-12 transition-transform duration-300 hover:translate-x-2 hover:scale-110"
             />
             <img
               src="https://skillicons.dev/icons?i=linux"
               alt="Linux"
-              className="w-12 h-12 transition-transform duration-300 hover:scale-110 hover:rotate-6"
+              className="w-12 h-12 transition-transform duration-300 hover:rotate-6 hover:skew-y-6"
             />
           </div>
 
