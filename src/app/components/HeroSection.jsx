@@ -100,7 +100,7 @@ const HeroSection = () => {
         </div>
         {/* className="col-span-5 place-self-center mt-4 lg:mt-0 animate__animated animate__slow animate__fadeInRight" */}
         {/* Seção da imagem */}
-        <div className="order-1 xl:order-none mb-8 xl:mb-0 col-span-5 place-self-center mt-4 animate__animated animate__slow animate__fadeInRight">
+        <div className="order-1 xl:order-none mb-8 xl:mb-0 col-span-5 place-self-center mt-6 animate__animated animate__slow animate__fadeInRight">
           <Photo />
         </div>
       </div>
