@@ -4,12 +4,14 @@ import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import "boxicons/css/boxicons.min.css";
 import "animate.css";
+import { motion } from "framer-motion";
+import Photo from "./Photo";
 
 const HeroSection = () => {
   return (
     <section>
       <div className="grid items-center grid-cols-1 sm:grid-cols-12 h-[85vh]">
-        <div className="col-span-7 text-center sm:text-left animate__animated animate__slow animate__fadeInLeft">
+        <div className="col-span-7  text-center sm:text-left order-2 xl:order-none animate__animated animate__slow animate__fadeInLeft">
           <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold">
             Seja Bem-Vindo!
           </h1>
@@ -42,47 +44,24 @@ const HeroSection = () => {
             />
           </h1>
           <br />
-          <div className="flex flex-wrap gap-4">
-            <img
-              src="https://skillicons.dev/icons?i=next"
-              alt="Next.js"
-              className="w-12 h-12 transition-transform duration-300 hover:scale-110"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=react"
-              alt="React"
-              className="w-12 h-12 transition-transform duration-300 hover:rotate-12"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=angular"
-              alt="Angular"
-              className="w-12 h-12 transition-transform duration-300 hover:translate-y-2"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=tailwind"
-              alt="Tailwind CSS"
-              className="w-12 h-12 transition-transform duration-300 hover:skew-x-12"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=js"
-              alt="JavaScript"
-              className="w-12 h-12 transition-transform duration-300 hover:scale-125 hover:rotate-3"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=ts"
-              alt="TypeScript"
-              className="w-12 h-12 transition-transform duration-300 hover:-rotate-12 hover:translate-y-1"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=docker"
-              alt="Docker"
-              className="w-12 h-12 transition-transform duration-300 hover:translate-x-2 hover:scale-110"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=linux"
-              alt="Linux"
-              className="w-12 h-12 transition-transform duration-300 hover:rotate-6 hover:skew-y-6"
-            />
+          <div className="flex flex-wrap justify-left gap-4">
+            {[
+              "next",
+              "react",
+              "angular",
+              "tailwind",
+              "js",
+              "ts",
+              "docker",
+              "linux",
+            ].map((icon) => (
+              <img
+                key={icon}
+                src={`https://skillicons.dev/icons?i=${icon}`}
+                alt={icon}
+                className="w-12 h-12 transition-transform duration-300 hover:scale-125"
+              />
+            ))}
           </div>
 
           <br />
@@ -95,44 +74,34 @@ const HeroSection = () => {
 
             {/* Ícones Sociais */}
             <div className="flex items-center gap-4">
-              <a
-                href="https://github.com/fagundes321"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-12 h-12 border-2 border-[#7CF03D] text-[#7CF03D] rounded-full text-2xl transition-all duration-300 hover:bg-[#7CF03D] hover:text-[#1f242d] hover:shadow-[0_0_10px_#7CF03D]"
-              >
-                <i className="bx bxl-github"></i>
-              </a>
-
-              <a
-                href="https://www.linkedin.com/in/victor-fagundes-324070259/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-12 h-12 border-2 border-[#7CF03D] text-[#7CF03D] rounded-full text-2xl transition-all duration-300 hover:bg-[#7CF03D] hover:text-[#1f242d] hover:shadow-[0_0_10px_#7CF03D]"
-              >
-                <i className="bx bxl-linkedin"></i>
-              </a>
-
-              <a
-                href="mailto:victorfagundes123@gmail.com?subject=Contato%20via%20Portfólio&body=Olá%20Victor,%20gostaria%20de%20falar%20com%20você!"
-                className="flex items-center justify-center w-12 h-12 border-2 border-[#7CF03D] text-[#7CF03D] rounded-full text-2xl transition-all duration-300 hover:bg-[#7CF03D] hover:text-[#1f242d] hover:shadow-[0_0_10px_#7CF03D]"
-              >
-                <i className="bx bxl-gmail"></i>
-              </a>
+              {[
+                { href: "https://github.com/fagundes321", icon: "github" },
+                {
+                  href: "https://www.linkedin.com/in/victor-fagundes-324070259/",
+                  icon: "linkedin",
+                },
+                {
+                  href: "mailto:victorfagundes123@gmail.com?subject=Contato%20via%20Portfólio&body=Olá%20Victor,%20gostaria%20de%20falar%20com%20você!",
+                  icon: "gmail",
+                },
+              ].map(({ href, icon }) => (
+                <a
+                  key={icon}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-12 h-12 border-2 border-[#7CF03D] text-[#7CF03D] rounded-full text-2xl transition-all duration-300 hover:bg-[#7CF03D] hover:text-[#1f242d] hover:shadow-[0_0_10px_#7CF03D]"
+                >
+                  <i className={`bx bxl-${icon}`}></i>
+                </a>
+              ))}
             </div>
           </div>
         </div>
-        <div className="col-span-5 place-self-center mt-4 lg:mt-0 animate__animated animate__slow animate__fadeInRight">
-          <div className="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] rounded-full overflow-hidden bg-[#181818] animate-rotate-border">
-            <Image
-              src="/images/hero-image.jpg"
-              alt="Minha foto"
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-[-45%] object-cover"
-              width={500}
-              height={500}
-            />
-            <div className="absolute inset-0 border-4 border-transparent bg-conic-gradient from-transparent via-transparent to-[#7cf03d] rounded-full"></div>
-          </div>
+        {/* className="col-span-5 place-self-center mt-4 lg:mt-0 animate__animated animate__slow animate__fadeInRight" */}
+        {/* Seção da imagem */}
+        <div className="order-1 xl:order-none mb-8 xl:mb-0 col-span-5 place-self-center mt-4 animate__animated animate__slow animate__fadeInRight">
+          <Photo />
         </div>
       </div>
     </section>
