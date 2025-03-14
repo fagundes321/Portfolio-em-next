@@ -18,7 +18,7 @@ const HeroSection = () => {
           <h1 className="text-white mb-4 text-3xl lg:text-4xl font-bold">
             Sou Victor Fagundes
           </h1>
-          <h1 className="text-[#7cf03d] mb-4 text-3xl lg:text-4xl font-bold">
+          <h1 className="text-[#7cf03d] mb-4 text-3xl lg:text-4xl font-bold whitespace-nowrap">
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#5CBF2A] via-[#7CF03D] to-[#2E6B1A]">
               Desenvolvedor{" "}
             </span>
@@ -43,6 +43,7 @@ const HeroSection = () => {
               repeat={Infinity}
             />
           </h1>
+
           <br />
           <div className="flex flex-wrap justify-left gap-4">
             {[
@@ -91,11 +92,10 @@ const HeroSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-12 h-12 border-2 border-[#7CF03D] text-[#7CF03D] rounded-full text-2xl transition-all duration-300 hover:bg-[#7CF03D] hover:text-[#1f242d] hover:shadow-[0_0_10px_#7CF03D]"
-                > 
+                >
                   <i className={`bx bxl-${icon}`}></i>
                 </a>
               ))}
-              
             </div>
           </div>
         </div>
