@@ -36,9 +36,9 @@ const Photo = () => {
             cy="253"
             r="250"
             stroke="url(#gradient)"
-            strokeWidth="3"
-            strockeLinecap="round"
-            strockeLinejoin="round"
+            strokeWidth="3" 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
             initial={{ strokeDasharray: "24 10 0 0" }}
             animate={{
               strokeDasharray: ["15 12 25 25", "16 25 92 72", "4 250 22 22"],

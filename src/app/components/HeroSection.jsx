@@ -65,7 +65,7 @@ const HeroSection = () => {
           </div>
 
           <br />
-          <div className="flex flex-col sm:flex-row gap-4 items-center">
+          <div className="flex flex-col sm:flex-row gap-4 items-center relative">
             {/* Botão de Download */}
             <button className="flex items-center justify-center w-fit px-6 py-3 gap-3 border-2 border-[#7CF03D] text-[#7CF03D] rounded-full text-lg font-extrabold transition-all duration-300 hover:bg-[#7CF03D] hover:text-[#1f242d] hover:shadow-[0_0_10px_#7CF03D]">
               Download CV
@@ -73,7 +73,7 @@ const HeroSection = () => {
             </button>
 
             {/* Ícones Sociais */}
-            <div className="flex items-center gap-4">
+            <div className=" flex items-center gap-4">
               {[
                 { href: "https://github.com/fagundes321", icon: "github" },
                 {
@@ -91,10 +91,11 @@ const HeroSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-12 h-12 border-2 border-[#7CF03D] text-[#7CF03D] rounded-full text-2xl transition-all duration-300 hover:bg-[#7CF03D] hover:text-[#1f242d] hover:shadow-[0_0_10px_#7CF03D]"
-                >
+                > 
                   <i className={`bx bxl-${icon}`}></i>
                 </a>
               ))}
+              
             </div>
           </div>
         </div>
