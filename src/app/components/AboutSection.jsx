@@ -6,7 +6,7 @@ const AboutSection = () => {
     <section className="text-white relative">
       <br/>
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16">
-        <Image src="/images/hero-image.jpg" width={500} height={500} />
+        <Image src="/images/hero-image3.png" alt="my photo" width={500} height={500} />
         <div>
           <h2 className="text-4xl font-bold text-white mb-4">&lt;Sobre/&gt;</h2>
           <p className="text-base lg:text-lg">
