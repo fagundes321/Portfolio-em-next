@@ -1,12 +1,28 @@
-import React from "react";
+"use client";
+import React, { useTransition, useState } from "react";
 import Image from "next/image";
+import TabBotton from "./TabButton";
 
 const AboutSection = () => {
+  const [tab, setTab] = useState("skills");
+  const [isPending, startTransition] = useTransition();
+
+  const handleTabChange = (id) => {
+    startTransition(() => {
+      setTab(id);
+    });
+  };
+
   return (
     <section className="text-white relative">
-      <br/>
+      <br />
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16">
-        <Image src="/images/hero-image3.png" alt="my photo" width={500} height={500} />
+        <Image
+          src="/images/hero-image3.png"
+          alt="my photo"
+          width={500}
+          height={500}
+        />
         <div>
           <h2 className="text-4xl font-bold text-white mb-4">&lt;Sobre/&gt;</h2>
           <p className="text-base lg:text-lg">
@@ -19,11 +35,27 @@ const AboutSection = () => {
             incríveis.
           </p>
           <div className="flex flex-row mt-8">
-            <span className="mr-3 font-semibold hover:text-[#7CF03D] text-[#ADB7BE] border-b border-[#7CF03D]">
-              Skills
-            </span>
-            <span>Education</span>
-            <span>Experience</span>
+            <TabBotton
+              selectTab={() => handleTabChange("skills")}
+              active={tab === "skills"}
+            >
+              {" "}
+              Skills{" "}
+            </TabBotton>
+            <TabBotton
+              selectTab={() => handleTabChange("Educação")}
+              active={tab === "Educação"}
+            >
+              {" "}
+              Educação{" "}
+            </TabBotton>
+            <TabBotton
+              selectTab={() => handleTabChange("Certificações")}
+              active={tab === "Certificações"}
+            >
+              {" "}
+              Certificações{" "}
+            </TabBotton>
           </div>
         </div>
       </div>
