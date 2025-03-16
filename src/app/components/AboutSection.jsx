@@ -1,7 +1,48 @@
 "use client";
 import React, { useTransition, useState } from "react";
 import Image from "next/image";
-import TabBotton from "./TabButton";
+import TabButton from "./TabButton";
+
+const TAB_DATA = [
+  {
+    title: "Skills",
+    id: "skills",
+    content: (
+      <ul className="list-disc pl-2">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>TypeScript</li>
+        <li>Next.js</li>
+        <li>React</li>
+        <li>Angular</li>
+        <li>Tailwind</li>
+        <li>Docker</li>
+        <li>Linux</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Educação",
+    id: "educacao",
+    content: (
+      <ul className="list-disc pl-2">
+        <li>Cursando Análise e Desenvolvimento de Sistemas</li>
+        <li>Curso</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Certificações",
+    id: "certificacoes",
+    content: (
+      <ul className="list-disc pl-2">
+        <li>Certificado Alura React</li>
+        <li>Certificado Senai</li>
+      </ul>
+    ),
+  },
+];
 
 const AboutSection = () => {
   const [tab, setTab] = useState("skills");
@@ -14,16 +55,21 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="text-white relative">
-      <br />
+    <section className="text-white mt-20">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16">
-        <Image
-          src="/images/hero-image3.png"
-          alt="my photo"
-          width={500}
-          height={500}
-        />
-        <div>
+        {/* Imagem do Perfil */}
+        <div className="flex justify-center mb-4 md:mb-0">
+          <Image
+            src="/images/hero-image3.png"
+            alt="my photo"
+            width={500}
+            height={500}
+            className="rounded-full"
+          />
+        </div>
+        
+        {/* Texto */}
+        <div className="text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">&lt;Sobre/&gt;</h2>
           <p className="text-base lg:text-lg">
             Sou um desenvolvedor full stack apaixonado por criar aplicações web
@@ -34,28 +80,32 @@ const AboutSection = () => {
             para colaborar com outras pessoas na criação de aplicações
             incríveis.
           </p>
-          <div className="flex flex-row mt-8">
-            <TabBotton
+          
+          {/* Botões de Aba */}
+          <div className="flex flex-row justify-start mt-8 space-x-4">
+            <TabButton
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
             >
-              {" "}
-              Skills{" "}
-            </TabBotton>
-            <TabBotton
-              selectTab={() => handleTabChange("Educação")}
-              active={tab === "Educação"}
+              Skills
+            </TabButton>
+            <TabButton
+              selectTab={() => handleTabChange("educacao")}
+              active={tab === "educacao"}
             >
-              {" "}
-              Educação{" "}
-            </TabBotton>
-            <TabBotton
-              selectTab={() => handleTabChange("Certificações")}
-              active={tab === "Certificações"}
+              Educação
+            </TabButton>
+            <TabButton
+              selectTab={() => handleTabChange("certificacoes")}
+              active={tab === "certificacoes"}
             >
-              {" "}
-              Certificações{" "}
-            </TabBotton>
+              Certificações
+            </TabButton>
+          </div>
+
+          {/* Conteúdo da Aba Selecionada */}
+          <div className="mt-8">
+            {TAB_DATA.find((t) => t.id === tab)?.content}
           </div>
         </div>
       </div>

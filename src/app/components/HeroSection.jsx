@@ -12,41 +12,63 @@ const HeroSection = () => {
     <section>
       <div className="grid items-center grid-cols-1 sm:grid-cols-12 h-[85vh]">
         <div className="col-span-7  text-center sm:text-left order-2 xl:order-none animate__animated animate__slow animate__fadeInLeft">
-          <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold">
+          <h1 className="text-white mb-4 text-3xl sm:text-5xl lg:text-6xl font-extrabold">
             Seja Bem-Vindo!
           </h1>
-          <h1 className="text-white mb-4 text-3xl lg:text-4xl font-bold">
+          <h1 className="text-white mb-4 text-2xl lg:text-4xl font-bold">
             Sou Victor Fagundes
           </h1>
-          <h1 className="text-[#7cf03d] mb-4 text-3xl lg:text-4xl font-bold whitespace-nowrap">
+          <h1 className="text-[#7cf03d] mb-4 text-3xl lg:text-4xl font-bold whitespace-nowrap max-w-full max-h-full overflow-hidden">
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#5CBF2A] via-[#7CF03D] to-[#2E6B1A]">
               Desenvolvedor{" "}
             </span>
-            <TypeAnimation
-              sequence={[
-                "Web",
-                1000,
-                "Front-end",
-                1000,
-                "Back-end!",
-                1000,
-                "Full Stack",
-                1000,
-              ]}
-              wrapper="span"
-              speed={30}
-              style={{
-                fontSize: "1em",
-                display: "inline-block",
-                color: "white",
-              }}
-              repeat={Infinity}
-            />
+            <div className="lg:hidden mt-2">
+              <TypeAnimation
+                sequence={[
+                  "Web",
+                  1000,
+                  "Front-end",
+                  1000,
+                  "Back-end!",
+                  1000,
+                  "Full Stack",
+                  1000,
+                ]}
+                wrapper="span"
+                speed={30}
+                style={{
+                  fontSize: "1em",
+                  display: "inline-block",
+                  color: "white",
+                }}
+                repeat={Infinity}
+              />
+            </div>
+            <div className="hidden lg:inline mt-2">
+              <TypeAnimation
+                sequence={[
+                  "Web",
+                  1000,
+                  "Front-end",
+                  1000,
+                  "Back-end!",
+                  1000,
+                  "Full Stack",
+                  1000,
+                ]}
+                wrapper="span"
+                speed={30}
+                style={{
+                  fontSize: "1em",
+                  display: "inline-block",
+                  color: "white",
+                }}
+                repeat={Infinity}
+              />
+            </div>
           </h1>
-
           <br />
           <div className="flex flex-wrap justify-center sm:justify-start gap-4">
-
             {[
               "next",
               "react",
