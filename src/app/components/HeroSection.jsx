@@ -45,7 +45,8 @@ const HeroSection = () => {
           </h1>
 
           <br />
-          <div className="flex flex-wrap justify-left gap-4">
+          <div className="flex flex-wrap justify-center sm:justify-start gap-4">
+
             {[
               "next",
               "react",
@@ -53,6 +54,8 @@ const HeroSection = () => {
               "tailwind",
               "js",
               "ts",
+              "html",
+              "css",
               "docker",
               "linux",
             ].map((icon) => (
