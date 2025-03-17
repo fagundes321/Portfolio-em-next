@@ -4,13 +4,9 @@ import React, { useState } from "react";
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
-import "animate.css";
+import "animate.css"; // Certifique-se de que a animação esteja carregando corretamente.
 
 const navLinks = [
-  // {
-  //   title: "Teste",
-  //   path: "#teste"
-  // },
   {
     title: "Sobre",
     path: "#sobre",
@@ -29,7 +25,7 @@ const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
-    <nav className="fixed mx-auto -top-0 left-0 right-0 z-10 bg-[#1f242d] bg-opacity-100 animate__animated animate__fadeInDown">
+    <nav className="fixed top-0 left-0 right-0 z-10 bg-[#1f242d] bg-opacity-100 animate__animated animate__fadeInDown">
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
         <Link
           href={"/"}
@@ -41,6 +37,8 @@ const Navbar = () => {
             alt="Logo"
           />
         </Link>
+        
+        {/* Menu para dispositivos móveis */}
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
             <button
@@ -58,6 +56,8 @@ const Navbar = () => {
             </button>
           )}
         </div>
+        
+        {/* Menu de navegação para telas maiores */}
         <div className="menu hidden md:block md:w-auto" id="navbar">
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
             {navLinks.map((link, index) => (
@@ -68,7 +68,9 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      {navbarOpen ? <MenuOverlay links={navLinks} /> : null}
+      
+      {/* Menu de sobreposição (mobile) */}
+      {navbarOpen && <MenuOverlay links={navLinks} />}
     </nav>
   );
 };
