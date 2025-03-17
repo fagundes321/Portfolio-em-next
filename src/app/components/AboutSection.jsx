@@ -8,18 +8,19 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (
-      <ul className="list-disc pl-4 columns-2 space-y-1">
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>TypeScript</li>
-        <li>Next.js</li>
-        <li>React</li>
-        <li>Angular</li>
-        <li>Tailwind</li>
-        <li>Docker</li>
-        <li>Linux</li>
-      </ul>
+      <ul className="list-disc pl-2 columns-2 space-y-1">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>TypeScript</li>
+      <li>Next.js</li>
+      <li>React</li>
+      <li>Angular</li>
+      <li>Tailwind</li>
+      <li>Docker</li>
+      <li>Linux</li>
+    </ul>
+    
     ),
   },
   {
@@ -55,13 +56,10 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="text-white mt-20" id="#sobre">
-      <div className="flex flex-col items-center text-center md:text-left md:grid md:grid-cols-2 gap-8 py-8 px-4 xl:gap-16 sm:py-16">
-        {/* Título */}
-        <h2 className="text-4xl font-bold text-white order-1">&lt;Sobre/&gt;</h2>
-
-        {/* Imagem */}
-        <div className="order-2 md:order-1 flex justify-center">
+    <section className="text-white mt-20">
+      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16">
+        {/* Imagem do Perfil */}
+        <div className="flex justify-center mb-4 md:mb-0">
           <Image
             src="/images/hero-image3.png"
             alt="my photo"
@@ -70,9 +68,10 @@ const AboutSection = () => {
             className="rounded-full"
           />
         </div>
-
+        
         {/* Texto */}
-        <div className="order-3 md:order-2 text-left flex flex-col h-full">
+        <div className="text-left flex flex-col h-full">
+          <h2 className="text-4xl font-bold text-white mb-4">&lt;Sobre/&gt;</h2>
           <p className="text-base lg:text-lg">
             Sou um desenvolvedor full stack apaixonado por criar aplicações web
             interativas e responsivas. Tenho experiência com JavaScript, React,
@@ -82,9 +81,9 @@ const AboutSection = () => {
             para colaborar com outras pessoas na criação de aplicações
             incríveis.
           </p>
-
+          
           {/* Botões de Aba */}
-          <div className="flex flex-row justify-center md:justify-start mt-8 space-x-4">
+          <div className="flex flex-row justify-start mt-8 space-x-4">
             <TabButton
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
@@ -106,7 +105,9 @@ const AboutSection = () => {
           </div>
 
           {/* Conteúdo da Aba Selecionada */}
-          <div className="mt-8">{TAB_DATA.find((t) => t.id === tab)?.content}</div>
+          <div className="mt-8">
+            {TAB_DATA.find((t) => t.id === tab)?.content}
+          </div>
         </div>
       </div>
     </section>
