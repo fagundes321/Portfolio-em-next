@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import ProjectCard from "./ProjectCard";
+import ProjectTag from "./ProjectTag";
 
 const projectsData = [
   {
