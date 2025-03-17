@@ -55,7 +55,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="text-white mt-20">
+    <section className="text-white mt-20" id="#sobre">
       <div className="flex flex-col items-center text-center md:text-left md:grid md:grid-cols-2 gap-8 py-8 px-4 xl:gap-16 sm:py-16">
         {/* Título */}
         <h2 className="text-4xl font-bold text-white order-1">&lt;Sobre/&gt;</h2>
