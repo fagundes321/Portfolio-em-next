@@ -6,7 +6,6 @@ import "boxicons/css/boxicons.min.css";
 import "animate.css";
 import { motion } from "framer-motion";
 import Photo from "./Photo";
-import Threads from "./Backgrounds/Threads";
 
 const HeroSection = () => {
   return (
