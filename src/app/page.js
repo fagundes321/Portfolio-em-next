@@ -5,6 +5,7 @@ import AboutSection from "./components/AboutSection";
 import ProjectsSection from "./components/ProjectsSection";
 import ClickSpark from "./components/ClickSpark/ClickSpark";
 import Threads from "./components/Backgrounds/Threads";
+import Particles from "./components/Backgrounds/Particles"
 
 export default function Home() {
   return (
@@ -17,7 +18,18 @@ export default function Home() {
         duration={400}
       >
         <Navbar />
-        
+        {/* <div className="absolute top-0 left-0 w-full h-full z-[-1]">
+        <Particles
+          particleColors={["#ffffff", "#ffffff"]}
+          particleCount={900}
+          particleSpread={10}
+          speed={0.1}
+          particleBaseSize={100}
+          moveParticlesOnHover={true}
+          alphaParticles={false}
+          disableRotation={false}
+        />
+      </div> */}
         {/* Seção Hero */}
         <div className="flex flex-col select-none">
           <div className="container mt-15 mx-auto px-12 py-4">
