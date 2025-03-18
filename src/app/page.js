@@ -9,7 +9,7 @@ import Particles from "./components/Backgrounds/Particles"
 
 export default function Home() {
   return (
-    <main>
+    <main className="select-none">
       <ClickSpark
         sparkColor="#fff"
         sparkSize={10}
