@@ -14,7 +14,7 @@
     "@heroui/react": "^2.7.5",
     "animate.css": "^4.1.1",
     "boxicons": "^2.1.4",
-    "framer-motion": "^12.5.0",
+    "framer-motion": "^11.3.24",
     "next": "15.2.1",
     "ogl": "^1.0.11",
     "react": "^19.0.0",
