@@ -6,6 +6,8 @@ import "boxicons/css/boxicons.min.css";
 import "animate.css";
 import { motion } from "framer-motion";
 import Photo from "./Photo";
+import ShinyText from "./ShinyText/ShinyText";
+
 
 const HeroSection = () => {
   return (
@@ -20,6 +22,8 @@ const HeroSection = () => {
           </h1>
           <h1 className="text-[#7cf03d] mb-4 text-3xl lg:text-4xl font-bold whitespace-nowrap max-w-full max-h-full overflow-hidden">
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#5CBF2A] via-[#7CF03D] to-[#2E6B1A]">
+            <ShinyText text="Desenvolvedor" disabled={false} speed={3} className="custom-class" />
+
               Desenvolvedor{" "}
             </span>
             <div className="lg:hidden mt-2">

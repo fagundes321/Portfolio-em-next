@@ -26,6 +26,6 @@
     "**/*.tsx",
     "src/app/components/HeroSection.jsx",
     "src/app/components/Navbar.jsx"
-  ],
+, "src/app/components/ShinyText.jsx"  ],
   "exclude": ["node_modules"]
 }
