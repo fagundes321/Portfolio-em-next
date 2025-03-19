@@ -4,6 +4,7 @@ import AboutSection from "./components/AboutSection";
 import ProjectsSection from "./components/ProjectsSection";
 import ClickSpark from "./components/ClickSpark/ClickSpark";
 import EmailSection from "./components/EmailSection"
+import Footer from "./components/Footer"
 
 export default function Home() {
   return (
@@ -26,7 +27,9 @@ export default function Home() {
           {/* Seção Projects */}
           <ProjectsSection />
         <EmailSection/>
+    
         </div>
+        <Footer/>
       </ClickSpark>
     </main>
   );
