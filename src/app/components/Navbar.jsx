@@ -8,6 +8,10 @@ import "animate.css"; // Certifique-se de que a animação esteja carregando cor
 
 const navLinks = [
   {
+    title: "Inicio",
+    path: "#inicio",
+  },
+  {
     title: "Sobre",
     path: "#sobre",
   },
@@ -19,6 +23,7 @@ const navLinks = [
     title: "Contato",
     path: "#contato",
   },
+  
 ];
 
 const Navbar = () => {
@@ -39,7 +44,7 @@ const Navbar = () => {
         </Link>
         
         {/* Menu para dispositivos móveis */}
-        <div className="mobile-menu block md:hidden">
+        <div className="mobile-menu block md:hidden ">
           {!navbarOpen ? (
             <button
               onClick={() => setNavbarOpen(true)}

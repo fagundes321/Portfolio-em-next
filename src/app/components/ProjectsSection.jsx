@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
+import AOS from "aos";
+import "aos/dist/aos.css"; 
 
 const projectsData = [
   {
@@ -37,12 +39,12 @@ const ProjectsSection = () => {
   });
     
   return (
-    <section className="md:grid gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16">
+    <section className="md:grid gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16" id="projetos">
       {/* Wrapper para centralizar o título */}
-      <div className="text-center">
+      <div className="text-center" data-aos="zoom-in">
         <h2 className="text-4xl font-bold text-white mt-4">PROJETOS</h2>
       </div>
-      <div className="text-white flex fle-row justify-center items-center gap-2 py-6">
+      <div className="text-white flex fle-row justify-center items-center gap-2 py-6" data-aos="zoom-in">
         <ProjectTag
           onClick={handleTagChange}
           name="Todos"
@@ -59,7 +61,7 @@ const ProjectsSection = () => {
           isSelected={tag === "Mobile"}
         />
       </div>
-      <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+      <div className="grid md:grid-cols-3 gap-8 md:gap-12" >
         {filteredProjects.map((project) => (
           <ProjectCard
             key={project.id}

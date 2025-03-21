@@ -1,6 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import "boxicons/css/boxicons.min.css";
+import AOS from "aos";
+import "aos/dist/aos.css"; 
+
+
 
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
@@ -46,17 +50,17 @@ const EmailSection = () => {
   };
 
   return (
-    <section className="grid md:grid-cols-2 my-12 py-24 gap-4">
-      <div>
-        <h5 className="text-xl font-bold text-white my-2">Vamos nos conectar</h5>
-        <p className="text-[#ADB7BE] mb-4 max-w-md">
+    <section className="grid md:grid-cols-2 my-12 py-70 gap-4  " id="contato">
+      <div >
+        <h5 className="text-xl font-bold text-white my-2" data-aos="fade-right">Vamos nos conectar</h5>
+        <p className="text-[#ADB7BE] mb-4 max-w-md" data-aos="fade-right">
           Atualmente, estou em busca de novas oportunidades profissionais e
           aberto a conexões estratégicas. Caso deseje discutir oportunidades,
           esclarecer dúvidas ou explorar possíveis parcerias, sinta-se à vontade
           para entrar em contato.
         </p>
         <div className="socials flex flex-row gap-2">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4" data-aos="fade-right">
             {[
               { href: "https://github.com/fagundes321", icon: "github" },
               {
@@ -91,7 +95,7 @@ const EmailSection = () => {
             {errorMessage && (
               <p className="text-red-500 text-center mb-4">{errorMessage}</p>
             )}
-            <div className="mb-6">
+            <div className="mb-6" data-aos="fade-left">
               <label
                 htmlFor="email"
                 className="text-white block mb-2 text-sm font-medium"
@@ -107,7 +111,7 @@ const EmailSection = () => {
                 placeholder="nome@gmail.com"
               />
             </div>
-            <div className="mb-6">
+            <div className="mb-6" data-aos="fade-left">
               <label
                 htmlFor="subject"
                 className="text-white block mb-2 text-sm font-medium"
@@ -123,7 +127,7 @@ const EmailSection = () => {
                 placeholder="Apenas dizendo oi"
               />
             </div>
-            <div className="mb-6">
+            <div className="mb-6" data-aos="fade-left">
               <label
                 htmlFor="message"
                 className="text-white block text-sm mb-2 font-medium"
@@ -141,6 +145,7 @@ const EmailSection = () => {
             <button
               type="submit"
               className="bg-[#7CF03D] text-[#1f242d] border-2 border-[#7CF03D] shadow-[0_0_8px_#7CF03D] transition-all duration-300 hover:bg-transparent hover:text-[#7CF03D] hover:shadow-[0_0_10px_#7CF03D] font-semibold py-3 px-6 rounded-xl w-full cursor-pointer"
+              data-aos="fade-left"
             >
               Enviar Mensagem
             </button>

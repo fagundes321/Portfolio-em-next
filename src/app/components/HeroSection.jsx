@@ -9,7 +9,7 @@ import Photo from "./Photo";
 
 const HeroSection = () => {
   return (
-    <section>
+    <section id="inicio">
       <div className="grid items-center grid-cols-1 sm:grid-cols-12 h-[85vh]">
         <div className="col-span-7  text-center sm:text-left order-2 xl:order-none animate__animated animate__slow animate__fadeInLeft">
           <h1 className="text-white mb-4 text-3xl sm:text-5xl lg:text-6xl font-extrabold">
