@@ -1,0 +1,76 @@
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const data = {
+    email: e.target.email.value,
+    subject: e.target.subject.value,
+    message: e.target.message.value,
+  };
+
+  const JSONdata = JSON.stringify(data);
+  const endpoint = "/api/send";
+
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSONdata,
+  };
+
+  console.log("Enviando dados:", JSONdata);  // Adicione este log
+
+  try {
+    const response = await fetch(endpoint, options);
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || "Erro desconhecido. Tente novamente.");
+    }
+
+    const resData = await response.json();
+    console.log("Mensagem enviada com sucesso:", resData);
+
+    setEmailSubmitted(true);
+    setErrorMessage(""); // Clear any previous error messages
+  } catch (error) {
+    console.error(error.message);
+    setErrorMessage(error.message);
+  }
+};
+
+export async function POST(req) {
+  try {
+    // Lê o corpo da requisição como texto
+    const body = await req.text();
+    console.log("Corpo da requisição:", body);  // Log do corpo recebido
+
+    const { email, subject, message } = JSON.parse(body);
+
+    // Verificação de campos obrigatórios
+    if (!email || !subject || !message) {
+      return NextResponse.json({ error: "Todos os campos são obrigatórios." }, { status: 400 });
+    }
+
+    // Envio do e-mail via API Resend
+    const data = await resend.emails.send({
+      from: `Victor <${fromEmail}>`,
+      to: [email],
+      subject: subject || "Sem assunto",
+      react: (
+        <>
+          <h1>{subject}</h1>
+          <p>Obrigado por nos contatar!</p>
+          <p>Nova mensagem enviada:</p>
+          <p>{message}</p>
+        </>
+      ),
+    });
+
+    return NextResponse.json({ success: true, data });
+  } catch (error) {
+    console.error("Erro ao enviar e-mail:", error);
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+}
+
