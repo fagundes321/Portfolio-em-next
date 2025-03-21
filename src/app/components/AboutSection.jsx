@@ -9,18 +9,17 @@ const TAB_DATA = [
     id: "skills",
     content: (
       <ul className="list-disc pl-2 columns-2 space-y-1">
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-      <li>TypeScript</li>
-      <li>Next.js</li>
-      <li>React</li>
-      <li>Angular</li>
-      <li>Tailwind</li>
-      <li>Docker</li>
-      <li>Linux</li>
-    </ul>
-    
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>TypeScript</li>
+        <li>Next.js</li>
+        <li>React</li>
+        <li>Angular</li>
+        <li>Tailwind</li>
+        <li>Docker</li>
+        <li>Linux</li>
+      </ul>
     ),
   },
   {
@@ -68,7 +67,7 @@ const AboutSection = () => {
             className="rounded-full"
           />
         </div>
-        
+
         {/* Texto */}
         <div className="text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">&lt;Sobre/&gt;</h2>
@@ -81,26 +80,26 @@ const AboutSection = () => {
             para colaborar com outras pessoas na criação de aplicações
             incríveis.
           </p>
-          
+
           {/* Botões de Aba */}
           <div className="flex flex-row justify-start mt-8 space-x-4">
             <TabButton
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
             >
-              Skills
+              <span className="text-center w-full block">Skills</span>
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("educacao")}
               active={tab === "educacao"}
             >
-              Educação
+              <span className="text-center w-full block">Educação</span>
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("certificacoes")}
               active={tab === "certificacoes"}
             >
-              Certificações
+              <span className="text-center w-full block">Certificações</span>
             </TabButton>
           </div>
 
