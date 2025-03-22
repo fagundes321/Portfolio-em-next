@@ -1,11 +1,31 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 const Photo = () => {
+  const [circleSize, setCircleSize] = useState(250);
+  const [dashArray, setDashArray] = useState("24 10 0 0");
+
+  useEffect(() => {
+    const updateSize = () => {
+      if (window.innerWidth < 640) {
+        setCircleSize(258); // Tamanho menor para mobile
+        setDashArray("8 10 15 15"); // Ajustando o dash para telas menores
+      } else {
+        setCircleSize(250); // Tamanho normal para desktop
+        setDashArray("15 12 25 25");
+      }
+    };
+
+    updateSize();
+    window.addEventListener("resize", updateSize);
+
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+
   return (
-    <div className="w-full h-full relative animate__animated animate__slow animate__fadeInRight">
+    <div className="w-full h-full relative animate__animated animate__slow animate__fadeInRight bg">
       <motion.div>
         {/* Container da imagem centralizado */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] xl:w-[490px] xl:h-[490px] rounded-full overflow-hidden mix-blend-lighten">
@@ -19,7 +39,7 @@ const Photo = () => {
           />
         </div>
         <motion.svg
-          className="w-[300px] xl:w-[506px] h-[300px] xl:h-[506px]"
+          className="w-[300px] xl:w-[506px] h-[300px] xl:h-[506px] "
           fill="transparent"
           viewBox="0 0 506 506"
           xmlns="http://www.w3.org/2000/svg"
@@ -32,16 +52,17 @@ const Photo = () => {
             </linearGradient>
           </defs>
           <motion.circle
+          
             cx="253"
             cy="253"
-            r="250"
+            r={circleSize}
             stroke="url(#gradient)"
-            strokeWidth="3" 
-            strokeLinecap="round" 
-            strokeLinejoin="round" 
-            initial={{ strokeDasharray: "24 10 0 0" }}
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            initial={{ strokeDasharray: dashArray }}
             animate={{
-              strokeDasharray: ["15 12 25 25", "16 25 92 72", "4 250 22 22"],
+              strokeDasharray: [dashArray, "16 25 92 72", "4 250 22 22"],
               rotate: [120, 360],
             }}
             transition={{
