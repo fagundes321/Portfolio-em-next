@@ -7,7 +7,7 @@ const ProjectTag = ({ name, onClick, isSelected }) => {
     <button
       className={`${buttonStyles} rounded-full border-2 px-6 py-3 text-xl cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none`}
       onClick={() => onClick(name)}
-      aria-pressed={isSelected} // Indica se o botão está selecionado
+      aria-pressed={isSelected} 
     >
       {name}
     </button>

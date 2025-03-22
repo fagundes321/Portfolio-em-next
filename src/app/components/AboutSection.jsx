@@ -6,7 +6,6 @@ import TabButton from "./TabButton";
 import AOS from "aos";
 import "aos/dist/aos.css"; 
 
-// Configuração de transição compartilhada
 const sharedTransition = { duration: 0.3, ease: "easeInOut" };
 
 const TAB_DATA = [
@@ -54,7 +53,7 @@ const AboutSection = () => {
   const [tab, setTab] = useState("skills");
 
   useEffect(() => {
-    AOS.init(); // Inicializando o AOS ao carregar o componente
+    AOS.init();
   }, []);
 
   const handleTabChange = (id) => {
@@ -64,7 +63,6 @@ const AboutSection = () => {
   return (
     <section className="text-white md:grid gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16" id="sobre">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16">
-        {/* Imagem do Perfil */}
         <div className="flex justify-center mb-4 md:mb-0" data-aos="fade-up" data-aos-duration="1000">
           <Image
             src="/images/hero-image3.png"
@@ -75,7 +73,6 @@ const AboutSection = () => {
           />
         </div>
 
-        {/* Texto */}
         <div className="text-left flex flex-col h-full" data-aos="fade-up" data-aos-duration="1000">
           <h2 className="text-4xl font-bold text-white mb-4">&lt;Sobre/&gt;</h2>
           <p className="text-base lg:text-lg">
@@ -88,7 +85,6 @@ const AboutSection = () => {
             incríveis.
           </p>
 
-          {/* Botões de Aba */}
           <div className="flex flex-row justify-start mt-8 space-x-4" data-aos="fade-up" data-aos-duration="1000">
             <TabButton
               selectTab={() => handleTabChange("skills")}
@@ -116,7 +112,6 @@ const AboutSection = () => {
             </TabButton>
           </div>
 
-          {/* Conteúdo da Aba Selecionada com Animação Horizontal */}
           <AnimatePresence mode="wait">
             <motion.div
               key={tab}
