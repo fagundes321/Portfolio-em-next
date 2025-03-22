@@ -1,3 +1,4 @@
+const {heroui} = require('@heroui/theme');
 /** @type {import('tailwindcss').Config} */
 const colors = require("tailwindcss/colors");
 
@@ -6,6 +7,7 @@ module.exports = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@heroui/theme/dist/components/(navbar|popover).js"
   ],
   theme: {
     extend: {
@@ -21,5 +23,5 @@ module.exports = {
       secondary: colors.white,
     },
   },
-  plugins: [],
+  plugins: [heroui()],
 };
