@@ -1,10 +1,12 @@
 import React from "react";
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import AOS from "aos";
+import "aos/dist/aos.css"; 
 
 const ProjectCard = ({ imgUrl, title, description, gitUrl, previwUrl }) => {
   return (
-    <div>
+    <div data-aos="flip-left">
       <div
         className="h-52 md:h-72 rounded-t-xl relative group"
         style={{

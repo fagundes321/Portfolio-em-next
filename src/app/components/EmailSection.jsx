@@ -1,56 +1,24 @@
-"use client"
+"use client";
 import React from "react";
 import "boxicons/css/boxicons.min.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const EmailSection = () => {
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const data = {
-      email: e.target.email.value,
-      subject: e.target.subject.value,
-      message: e.target.message.value,
-    }
-    const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
-
-
-    // Form the request for sending data to the server.
-    const options = {
-      // The method is POST because we are sending data.
-      method: "POST",
-      // Tell the server we're sending JSON.
-      headers: {
-        "Content-Type": "application/json",
-      },
-      // Body of the request is the JSON data we created above.
-      body: JSONdata,
-    };
-
-    const response = await fetch(endpoint, options);
-    const resData = await response.json();
-
-    if (response.status === 200) {
-      console.log("Message sent.");
-      setEmailSubmitted(true);
-    }
-  }
   return (
-    <section className="grid md:grid-cols-2 my-12 py-24 gap-4">
-      
+    <section className="grid md:grid-cols-2 my-12 py-70 gap-4" id="contato">
       <div>
-        <h5 className="text-xl font-bold text-white my-2">
-          vamos nos conectar
+        <h5 className="text-xl font-bold text-white my-2" data-aos="fade-right">
+          Vamos nos conectar
         </h5>
-        <p className="text-[#ADB7BE] mb-4 max-w-md">
-          {""}
+        <p className="text-[#ADB7BE] mb-4 max-w-md" data-aos="fade-right">
           Atualmente, estou em busca de novas oportunidades profissionais e
           aberto a conexões estratégicas. Caso deseje discutir oportunidades,
           esclarecer dúvidas ou explorar possíveis parcerias, sinta-se à vontade
           para entrar em contato.
         </p>
         <div className="socials flex flex-row gap-2">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4" data-aos="fade-right">
             {[
               { href: "https://github.com/fagundes321", icon: "github" },
               {
@@ -76,7 +44,41 @@ const EmailSection = () => {
         </div>
       </div>
       <div>
-        <form className="flex flex-col" onSubmit={handleSubmit}>
+        <form
+          className="flex flex-col"
+          action="https://formsubmit.co/victorfagundes123@gmail.com"
+          method="POST"
+        >
+          {/* Campos ocultos do FormSubmit */}
+          <input type="hidden" name="_captcha" value="false" />
+          <input
+            type="hidden"
+            name="_next"
+            value="https://seusite.com/obrigado" // altere para a URL desejada
+          />
+          <input
+            type="hidden"
+            name="_subject"
+            value="Nova mensagem do portfólio"
+          />
+
+          <div className="mb-6">
+            <label
+              htmlFor="name"
+              className="text-white block mb-2 text-sm font-medium"
+            >
+              Nome
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              placeholder="Seu nome"
+            />
+          </div>
+
           <div className="mb-6">
             <label
               htmlFor="email"
@@ -87,6 +89,7 @@ const EmailSection = () => {
             <input
               type="email"
               id="email"
+              name="email"
               required
               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
               placeholder="nome@gmail.com"
@@ -101,10 +104,11 @@ const EmailSection = () => {
             </label>
             <input
               type="text"
-              id="assunto"
+              id="subject"
+              name="subject"
               required
               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-              placeholder="apenas dizendo oi"
+              placeholder="Apenas dizendo oi"
             />
           </div>
           <div className="mb-6">
@@ -115,17 +119,19 @@ const EmailSection = () => {
               Mensagem
             </label>
             <textarea
-              name="mensagem"
-              id="mensagem"
+              name="message"
+              id="message"
+              required
               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
               placeholder="Vamos falar sobre..."
             />
           </div>
           <button
             type="submit"
-            className="bg-[#57db0f] hover:bg-[#2E6B1A] text-white font-medium py-2.5 px-5 rounded-lg w-full">
-              Enviar Mensagem
-            </button>
+            className="bg-[#7CF03D] text-[#1f242d] border-2 border-[#7CF03D] shadow-[0_0_8px_#7CF03D] transition-all duration-300 hover:bg-transparent hover:text-[#7CF03D] hover:shadow-[0_0_10px_#7CF03D] font-semibold py-3 px-6 rounded-xl w-full cursor-pointer"
+          >
+            Enviar Mensagem
+          </button>
         </form>
       </div>
     </section>

@@ -1,8 +1,10 @@
 import React from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; 
 
 const Footer = () => {
   return (
-    <footer className="footer border border-t-[#33353F] border-l-transparent border-r-transparent text-white">
+    <footer className="footer border-t z-10 border-t-[#33353F] border-l-transparent border-r-transparent text-white" >
       <div className="container p-8 flex flex-col sm:flex-row justify-between items-center">
         <img
           src="images/logo.png"
