@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
-import "animate.css"; // Certifique-se de que a animação esteja carregando corretamente.
+import "animate.css";
+
 
 const navLinks = [
   {
@@ -23,7 +24,6 @@ const navLinks = [
     title: "Contato",
     path: "#contato",
   },
-  
 ];
 
 const Navbar = () => {
@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-10 bg-[#1f242d] bg-opacity-100 animate__animated animate__fadeInDown">
-      <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
+      <div className="flex container items-center justify-between mx-auto px-4 py-2">
         <Link
           href={"/"}
           className="text-2xl md:text-5xl text-white font-semibold"
@@ -42,27 +42,25 @@ const Navbar = () => {
             alt="Logo"
           />
         </Link>
-        
-        {/* Menu para dispositivos móveis */}
-        <div className="mobile-menu block md:hidden ">
+
+        <div className="mobile-menu flex md:hidden items-center">
           {!navbarOpen ? (
             <button
               onClick={() => setNavbarOpen(true)}
-              className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-[#7CF03D] hover:border-[#7CF03D]"
+              className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-[#7CF03D] hover:border-[#7CF03D] ml-auto"
             >
               <Bars3Icon className="h-5 w-5" />
             </button>
           ) : (
             <button
               onClick={() => setNavbarOpen(false)}
-              className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-[#f03d3d] hover:border-[#f03d3d]"
+              className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-[#f03d3d] hover:border-[#f03d3d] ml-auto"
             >
               <XMarkIcon className="h-5 w-5" />
             </button>
           )}
         </div>
-        
-        {/* Menu de navegação para telas maiores */}
+
         <div className="menu hidden md:block md:w-auto" id="navbar">
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
             {navLinks.map((link, index) => (
@@ -73,8 +71,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      
-      {/* Menu de sobreposição (mobile) */}
+
       {navbarOpen && <MenuOverlay links={navLinks} />}
     </nav>
   );

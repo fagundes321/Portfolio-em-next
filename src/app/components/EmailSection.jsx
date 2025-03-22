@@ -1,58 +1,16 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import "boxicons/css/boxicons.min.css";
 import AOS from "aos";
-import "aos/dist/aos.css"; 
-
-
+import "aos/dist/aos.css";
 
 const EmailSection = () => {
-  const [emailSubmitted, setEmailSubmitted] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const data = {
-      email: e.target.email.value,
-      subject: e.target.subject.value,
-      message: e.target.message.value,
-    };
-
-    const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
-
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSONdata,
-    };
-
-    try {
-      const response = await fetch(endpoint, options);
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || "Erro desconhecido. Tente novamente.");
-      }
-
-      const resData = await response.json();
-      console.log("Mensagem enviada com sucesso:", resData);
-
-      setEmailSubmitted(true);
-      setErrorMessage(""); // Clear any previous error messages
-    } catch (error) {
-      console.error(error.message);
-      setErrorMessage(error.message);
-    }
-  };
-
   return (
-    <section className="grid md:grid-cols-2 my-12 py-70 gap-4  " id="contato">
-      <div >
-        <h5 className="text-xl font-bold text-white my-2" data-aos="fade-right">Vamos nos conectar</h5>
+    <section className="grid md:grid-cols-2 my-12 py-70 gap-4" id="contato">
+      <div>
+        <h5 className="text-xl font-bold text-white my-2" data-aos="fade-right">
+          Vamos nos conectar
+        </h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md" data-aos="fade-right">
           Atualmente, estou em busca de novas oportunidades profissionais e
           aberto a conexões estratégicas. Caso deseje discutir oportunidades,
@@ -86,71 +44,95 @@ const EmailSection = () => {
         </div>
       </div>
       <div>
-        {emailSubmitted ? (
-          <p className="text-green-400 text-center text-lg">
-            ✅ Sua mensagem foi enviada com sucesso!
-          </p>
-        ) : (
-          <form className="flex flex-col" onSubmit={handleSubmit}>
-            {errorMessage && (
-              <p className="text-red-500 text-center mb-4">{errorMessage}</p>
-            )}
-            <div className="mb-6" data-aos="fade-left">
-              <label
-                htmlFor="email"
-                className="text-white block mb-2 text-sm font-medium"
-              >
-                Seu E-mail
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="nome@gmail.com"
-              />
-            </div>
-            <div className="mb-6" data-aos="fade-left">
-              <label
-                htmlFor="subject"
-                className="text-white block mb-2 text-sm font-medium"
-              >
-                Assunto
-              </label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Apenas dizendo oi"
-              />
-            </div>
-            <div className="mb-6" data-aos="fade-left">
-              <label
-                htmlFor="message"
-                className="text-white block text-sm mb-2 font-medium"
-              >
-                Mensagem
-              </label>
-              <textarea
-                name="message"
-                id="message"
-                required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Vamos falar sobre..."
-              />
-            </div>
-            <button
-              type="submit"
-              className="bg-[#7CF03D] text-[#1f242d] border-2 border-[#7CF03D] shadow-[0_0_8px_#7CF03D] transition-all duration-300 hover:bg-transparent hover:text-[#7CF03D] hover:shadow-[0_0_10px_#7CF03D] font-semibold py-3 px-6 rounded-xl w-full cursor-pointer"
-              data-aos="fade-left"
+        <form
+          className="flex flex-col"
+          action="https://formsubmit.co/victorfagundes123@gmail.com"
+          method="POST"
+        >
+          {/* Campos ocultos do FormSubmit */}
+          <input type="hidden" name="_captcha" value="false" />
+          <input
+            type="hidden"
+            name="_next"
+            value="https://seusite.com/obrigado" // altere para a URL desejada
+          />
+          <input
+            type="hidden"
+            name="_subject"
+            value="Nova mensagem do portfólio"
+          />
+
+          <div className="mb-6">
+            <label
+              htmlFor="name"
+              className="text-white block mb-2 text-sm font-medium"
             >
-              Enviar Mensagem
-            </button>
-          </form>
-        )}
+              Nome
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              placeholder="Seu nome"
+            />
+          </div>
+
+          <div className="mb-6">
+            <label
+              htmlFor="email"
+              className="text-white block mb-2 text-sm font-medium"
+            >
+              Seu E-mail
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              placeholder="nome@gmail.com"
+            />
+          </div>
+          <div className="mb-6">
+            <label
+              htmlFor="subject"
+              className="text-white block mb-2 text-sm font-medium"
+            >
+              Assunto
+            </label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              required
+              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              placeholder="Apenas dizendo oi"
+            />
+          </div>
+          <div className="mb-6">
+            <label
+              htmlFor="message"
+              className="text-white block text-sm mb-2 font-medium"
+            >
+              Mensagem
+            </label>
+            <textarea
+              name="message"
+              id="message"
+              required
+              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              placeholder="Vamos falar sobre..."
+            />
+          </div>
+          <button
+            type="submit"
+            className="bg-[#7CF03D] text-[#1f242d] border-2 border-[#7CF03D] shadow-[0_0_8px_#7CF03D] transition-all duration-300 hover:bg-transparent hover:text-[#7CF03D] hover:shadow-[0_0_10px_#7CF03D] font-semibold py-3 px-6 rounded-xl w-full cursor-pointer"
+          >
+            Enviar Mensagem
+          </button>
+        </form>
       </div>
     </section>
   );
