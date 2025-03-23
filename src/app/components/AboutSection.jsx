@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import TabButton from "./TabButton";
 import AOS from "aos";
 import "aos/dist/aos.css"; 
+import Recommendations from "./Recommendations";
 
 const sharedTransition = { duration: 0.3, ease: "easeInOut" };
 
@@ -47,6 +48,11 @@ const TAB_DATA = [
       </ul>
     ),
   },
+  {
+    title: "Recomendações",
+    id: "recomendacoes", // Alterado para minúsculas
+    content: <Recommendations />,
+  },
 ];
 
 const AboutSection = () => {
@@ -86,30 +92,17 @@ const AboutSection = () => {
           </p>
 
           <div className="flex flex-row justify-start mt-8 space-x-4" data-aos="fade-up" data-aos-duration="1000">
-            <TabButton
-              selectTab={() => handleTabChange("skills")}
-              active={tab === "skills"}
-              data-aos="fade-up"
-              data-aos-duration="1000"
-            >
-              <span className="text-center w-full block">Skills</span>
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("educacao")}
-              active={tab === "educacao"}
-              data-aos="fade-up"
-              data-aos-duration="1000"
-            >
-              <span className="text-center w-full block">Educação</span>
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("certificacoes")}
-              active={tab === "certificacoes"}
-              data-aos="fade-up"
-              data-aos-duration="1000"
-            >
-              <span className="text-center w-full block">Certificações</span>
-            </TabButton>
+            {TAB_DATA.map(({ id, title }) => (
+              <TabButton
+                key={id}
+                selectTab={() => handleTabChange(id)}
+                active={tab === id}
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              >
+                <span className="text-center w-full block">{title}</span>
+              </TabButton>
+            ))}
           </div>
 
           <AnimatePresence mode="wait">

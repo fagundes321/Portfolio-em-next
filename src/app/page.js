@@ -31,6 +31,7 @@ export default function Home() {
           <AboutSection />
           <ProjectsSection />
           <EmailSection />
+        
         </div>
         <Footer />
       </ClickSpark>
