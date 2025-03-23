@@ -35,15 +35,15 @@ const Recommendations = () => {
             </p>
           }
           title={
-            <div className="flex items-center">
-              <p className="text-left">José Carlos Gonçalves da Costa</p>
+            <div className="flex items-center justify-between w-full">
+              <p className="text-left text-sm sm:text-base">José Carlos Gonçalves da Costa</p>
               <a
                 href="https://www.linkedin.com/in/jos%C3%A9-carlos-gon%C3%A7alves-da-costa-33572a115/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="ml-2"
               >
-                <i className="bx bxl-linkedin-square text-2xl text-gray-500"></i>
+                <i className="bx bxl-linkedin-square text-xl sm:text-2xl text-gray-500"></i>
               </a>
             </div>
           }
@@ -76,15 +76,15 @@ const Recommendations = () => {
             </p>
           }
           title={
-            <div className="flex items-center">
-              <p className="text-left">Cleyson Lago de Sousa</p>
+            <div className="flex items-center justify-between w-full">
+              <p className="text-left text-sm sm:text-base">Cleyson Lago de Sousa</p>
               <a
                 href="https://www.linkedin.com/in/cleysonlago/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="ml-2"
               >
-                <i className="bx bxl-linkedin-square text-2xl text-gray-500"></i>
+                <i className="bx bxl-linkedin-square text-xl sm:text-2xl text-gray-500"></i>
               </a>
             </div>
           }
@@ -118,15 +118,15 @@ const Recommendations = () => {
             </div>
           }
           title={
-            <div className="flex items-center">
-              <p className="text-left">Bruno Brizon Reis</p>
+            <div className="flex items-center justify-between w-full">
+              <p className="text-left text-sm sm:text-base">Bruno Brizon Reis</p>
               <a
                 href="https://www.linkedin.com/in/bruno-brizon-reis-981a7a78/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="ml-2"
               >
-                <i className="bx bxl-linkedin-square text-2xl text-gray-500"></i>
+                <i className="bx bxl-linkedin-square text-xl sm:text-2xl text-gray-500"></i>
               </a>
             </div>
           }
