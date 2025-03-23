@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "@heroui/accordion": "^2.2.13",
     "@heroui/navbar": "^2.2.14",
     "@heroui/react": "^2.7.5",
     "@heroui/system": "^2.4.12",
@@ -20,7 +21,7 @@
     "aos": "^2.3.4",
     "boxicons": "^2.1.4",
     "framer-motion": "^12.5.0",
-    "next": "15.2.1",
+    "next": "^15.2.3",
     "ogl": "^1.0.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
