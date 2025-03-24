@@ -16,7 +16,8 @@ const Recommendations = () => {
       shortName: "José C.",
       role: "Desenvolvedor Outsystems e PHP",
       img: "images/avatar/jose_carlos.jpg",
-      linkedin: "https://www.linkedin.com/in/jos%C3%A9-carlos-gon%C3%A7alves-da-costa-33572a115/",
+      linkedin:
+        "https://www.linkedin.com/in/jos%C3%A9-carlos-gon%C3%A7alves-da-costa-33572a115/",
       description:
         "É um profissional muito dedicado, respeitoso, cordial, possui excelente capacidade de aprendizado rápido e tem uma proatividade que faz toda a diferença no ambiente de trabalho. Seu grande diferencial é sua constante busca pelo conhecimento e aprimoramento profissional.",
     },
@@ -49,14 +50,23 @@ const Recommendations = () => {
           <AccordionItem
             key={person.id}
             aria-label={person.name}
+            isOpen={expanded === person.id}
+            hideIndicator={true} // ✅ REMOVE o indicador padrão do Hero UI
             startContent={
               <div className="flex items-center w-full">
                 <Avatar radius="full" src={person.img} />
               </div>
             }
-            subtitle={<p className="text-[#ADB7BE] text-sm text-left whitespace-pre-line">{person.role}</p>}
+            subtitle={
+              <p className="text-[#ADB7BE] text-sm text-left whitespace-pre-line">
+                {person.role}
+              </p>
+            }
             title={
-              <div className="flex items-center justify-between w-full">
+              <div
+                className="flex items-center justify-between w-full cursor-pointer"
+                onClick={() => toggleAccordion(person.id)}
+              >
                 <div className="flex items-center">
                   <p className="text-left text-sm sm:text-base hidden md:block">
                     {person.name}
@@ -65,27 +75,28 @@ const Recommendations = () => {
                     {person.shortName}
                   </p>
                 </div>
-                <a
-                  href={person.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="bx bxl-linkedin-square text-xl sm:text-2xl text-gray-500"></i>
-                </a>
+                <div className="flex items-center">
+                  <a
+                    href={person.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mr-2"
+                  >
+                    <i className="bx bxl-linkedin-square text-xl sm:text-2xl text-gray-500"></i>
+                  </a>
+                  {/* ✅ Ícone da seta agora funciona corretamente */}
+                  <i
+                    className={`bx bx-chevron-down text-xl text-gray-400 transition-transform duration-300 ease-in-out ${
+                      expanded === person.id ? "rotate-180" : "rotate-0"
+                    }`}
+                  ></i>
+                </div>
               </div>
             }
             className="border-b border-[#33353F]"
-            onClick={() => toggleAccordion(person.id)}
           >
             <div className="flex justify-between items-start">
               <div className="flex-1">{person.description}</div>
-              <span
-                aria-hidden="true"
-                className={`transition-transform duration-300 ease-in-out ${
-                  expanded === person.id ? "rotate-180" : "rotate-0"
-                } text-gray-400 ml-4`}
-              >
-              </span>
             </div>
           </AccordionItem>
         ))}
