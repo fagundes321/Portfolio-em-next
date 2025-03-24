@@ -36,7 +36,8 @@ const Recommendations = () => {
           }
           title={
             <div className="flex items-center justify-between w-full">
-              <p className="text-left text-sm sm:text-base">José Carlos Gonçalves da Costa</p>
+              <p className="text-left text-sm sm:text-base hidden md:block">José Carlos Gonçalves da Costa</p>
+              <p className="text-left text-sm sm:text-base md:hidden">José C.</p> {/* Simplificado para celular */}
               <a
                 href="https://www.linkedin.com/in/jos%C3%A9-carlos-gon%C3%A7alves-da-costa-33572a115/"
                 target="_blank"
@@ -53,7 +54,7 @@ const Recommendations = () => {
           <div className="flex items-center justify-between">
             <span
               aria-hidden="true"
-              className={`transition-transform ${
+              className={`transition-transform duration-300 ease-in-out ${
                 expanded === 1 ? "-rotate-90" : "rotate-0"
               } text-gray-400`}
             ></span>
@@ -77,7 +78,8 @@ const Recommendations = () => {
           }
           title={
             <div className="flex items-center justify-between w-full">
-              <p className="text-left text-sm sm:text-base">Cleyson Lago de Sousa</p>
+              <p className="text-left text-sm sm:text-base hidden md:block">Cleyson Lago de Sousa</p>
+              <p className="text-left text-sm sm:text-base md:hidden">Cleyson L.</p> {/* Simplificado para celular */}
               <a
                 href="https://www.linkedin.com/in/cleysonlago/"
                 target="_blank"
@@ -94,7 +96,7 @@ const Recommendations = () => {
           <div className="flex items-center justify-between">
             <span
               aria-hidden="true"
-              className={`transition-transform ${
+              className={`transition-transform duration-300 ease-in-out ${
                 expanded === 2 ? "-rotate-90" : "rotate-0"
               } text-gray-400`}
             ></span>
@@ -119,7 +121,8 @@ const Recommendations = () => {
           }
           title={
             <div className="flex items-center justify-between w-full">
-              <p className="text-left text-sm sm:text-base">Bruno Brizon Reis</p>
+              <p className="text-left text-sm sm:text-base hidden md:block">Bruno Brizon Reis</p>
+              <p className="text-left text-sm sm:text-base md:hidden">Bruno B.</p> {/* Simplificado para celular */}
               <a
                 href="https://www.linkedin.com/in/bruno-brizon-reis-981a7a78/"
                 target="_blank"
@@ -136,7 +139,7 @@ const Recommendations = () => {
           <div className="flex items-center justify-between">
             <span
               aria-hidden="true"
-              className={`transition-transform ${
+              className={`transition-transform duration-300 ease-in-out ${
                 expanded === 3 ? "-rotate-90" : "rotate-0"
               } text-gray-400`}
             ></span>

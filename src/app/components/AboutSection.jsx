@@ -6,6 +6,7 @@ import TabButton from "./TabButton";
 import AOS from "aos";
 import "aos/dist/aos.css"; 
 import Recommendations from "./Recommendations";
+import { useSwipeable } from "react-swipeable"; // Importar o useSwipeable
 
 const sharedTransition = { duration: 0.3, ease: "easeInOut" };
 
@@ -62,6 +63,20 @@ const AboutSection = () => {
     AOS.init();
   }, []);
 
+  // Configurar o hook useSwipeable
+  const handlers = useSwipeable({
+    onSwipedLeft: () => {
+      const currentIndex = TAB_DATA.findIndex((t) => t.id === tab);
+      const nextIndex = (currentIndex + 1) % TAB_DATA.length;
+      setTab(TAB_DATA[nextIndex].id);
+    },
+    onSwipedRight: () => {
+      const currentIndex = TAB_DATA.findIndex((t) => t.id === tab);
+      const prevIndex = (currentIndex - 1 + TAB_DATA.length) % TAB_DATA.length;
+      setTab(TAB_DATA[prevIndex].id);
+    },
+  });
+
   const handleTabChange = (id) => {
     setTab(id);
   };
@@ -79,7 +94,12 @@ const AboutSection = () => {
           />
         </div>
 
-        <div className="text-left flex flex-col h-full" data-aos="fade-up" data-aos-duration="1000">
+        <div
+          className="text-left flex flex-col h-full"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          {...handlers} // Adicionando o swipeable
+        >
           <h2 className="text-4xl font-bold text-white mb-4">&lt;Sobre/&gt;</h2>
           <p className="text-base lg:text-lg">
             Sou um desenvolvedor full stack apaixonado por criar aplicações web
@@ -91,7 +111,7 @@ const AboutSection = () => {
             incríveis.
           </p>
 
-          <div className="flex flex-row justify-start mt-8 space-x-4" data-aos="fade-up" data-aos-duration="1000">
+          <div className="flex flex-wrap justify-start mt-8 sm:grid sm:grid-cols-2 sm:gap-4 lg:flex lg:flex-row lg:space-x-4" data-aos="fade-up" data-aos-duration="1000">
             {TAB_DATA.map(({ id, title }) => (
               <TabButton
                 key={id}

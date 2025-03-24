@@ -6,7 +6,6 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
 import "animate.css";
 
-
 const navLinks = [
   {
     title: "Inicio",
@@ -47,16 +46,26 @@ const Navbar = () => {
           {!navbarOpen ? (
             <button
               onClick={() => setNavbarOpen(true)}
-              className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-[#7CF03D] hover:border-[#7CF03D] ml-auto"
+              className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-[#7CF03D] hover:border-[#7CF03D] ml-auto relative"
             >
-              <Bars3Icon className="h-5 w-5" />
+              <Bars3Icon
+                className="h-5 w-5 transform transition-transform duration-500 ease-in-out"
+                style={{
+                  transform: navbarOpen ? "rotate(45deg)" : "rotate(0deg)",
+                }}
+              />
             </button>
           ) : (
             <button
               onClick={() => setNavbarOpen(false)}
-              className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-[#f03d3d] hover:border-[#f03d3d] ml-auto"
+              className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-[#f03d3d] hover:border-[#f03d3d] ml-auto relative"
             >
-              <XMarkIcon className="h-5 w-5" />
+              <XMarkIcon
+                className="h-5 w-5 transform transition-transform duration-500 ease-in-out"
+                style={{
+                  transform: navbarOpen ? "rotate(0deg)" : "rotate(-45deg)",
+                }}
+              />
             </button>
           )}
         </div>
@@ -72,7 +81,12 @@ const Navbar = () => {
         </div>
       </div>
 
-      {navbarOpen && <MenuOverlay links={navLinks} />}
+      {navbarOpen && (
+        <MenuOverlay
+          links={navLinks}
+          className="animate__animated animate__fadeInDown"
+        />
+      )}
     </nav>
   );
 };
