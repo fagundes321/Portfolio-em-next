@@ -19,7 +19,7 @@ const Recommendations = () => {
     "Foi um ótimo aluno, dedicado, inteligente e focado. Sua capacidade de compreensão das linguagens apresentadas e desenvolvimento de raciocínio lógico sempre me surpreenderam. Como profissional tenho certeza que ele se destacará independente do campo. Me orgulho por ter feito parte do caminho dele como profissional de TI e vendo o quanto cresceu me deixa feliz e ver que mais pessoas com amor pela profissão estão entrando no mercado de trabalho.";
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 ">
       <Accordion variant="splitted">
         <AccordionItem
           key="1"

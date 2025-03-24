@@ -4,11 +4,14 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import TabButton from "./TabButton";
 import AOS from "aos";
-import "aos/dist/aos.css"; 
+import "aos/dist/aos.css";
 import Recommendations from "./Recommendations";
-import { useSwipeable } from "react-swipeable"; // Importar o useSwipeable
+import { useSwipeable } from "react-swipeable";
 
 const sharedTransition = { duration: 0.3, ease: "easeInOut" };
+
+const sobre_mim =
+  "   Sou um desenvolvedor full stack apaixonado por criar aplicações web interativas e responsivas. Tenho experiência com JavaScript, React,Redux, Node.js, Express, PostgreSQL, Sequelize, HTML, CSS e Git. Sou um aprendiz rápido e estou sempre buscando expandir meus conhecimentos e habilidades. Trabalho bem em equipe e estou animado para colaborar com outras pessoas na criação de aplicações incríveis.";
 
 const TAB_DATA = [
   {
@@ -51,7 +54,7 @@ const TAB_DATA = [
   },
   {
     title: "Recomendações",
-    id: "recomendacoes", // Alterado para minúsculas
+    id: "recomendacoes",
     content: <Recommendations />,
   },
 ];
@@ -63,7 +66,6 @@ const AboutSection = () => {
     AOS.init();
   }, []);
 
-  // Configurar o hook useSwipeable
   const handlers = useSwipeable({
     onSwipedLeft: () => {
       const currentIndex = TAB_DATA.findIndex((t) => t.id === tab);
@@ -82,9 +84,16 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="text-white md:grid gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16" id="sobre">
+    <section
+      className="text-white md:grid gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16"
+      id="sobre"
+    >
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16">
-        <div className="flex justify-center mb-4 md:mb-0" data-aos="fade-up" data-aos-duration="1000">
+        <div
+          className="flex justify-center mb-4 md:mb-0"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           <Image
             src="/images/hero-image3.png"
             alt="my photo"
@@ -98,20 +107,15 @@ const AboutSection = () => {
           className="text-left flex flex-col h-full"
           data-aos="fade-up"
           data-aos-duration="1000"
-          {...handlers} // Adicionando o swipeable
+          {...handlers}
         >
           <h2 className="text-4xl font-bold text-white mb-4">&lt;Sobre/&gt;</h2>
-          <p className="text-base lg:text-lg">
-            Sou um desenvolvedor full stack apaixonado por criar aplicações web
-            interativas e responsivas. Tenho experiência com JavaScript, React,
-            Redux, Node.js, Express, PostgreSQL, Sequelize, HTML, CSS e Git. Sou
-            um aprendiz rápido e estou sempre buscando expandir meus
-            conhecimentos e habilidades. Trabalho bem em equipe e estou animado
-            para colaborar com outras pessoas na criação de aplicações
-            incríveis.
-          </p>
-
-          <div className="flex flex-wrap justify-start mt-8 sm:grid sm:grid-cols-2 sm:gap-4 lg:flex lg:flex-row lg:space-x-4" data-aos="fade-up" data-aos-duration="1000">
+          <p className="text-base lg:text-lg">{sobre_mim}</p>
+          <div
+            className="flex flex-wrap justify-start mt-8 sm:grid sm:grid-cols-2 sm:gap-4 lg:flex lg:flex-row lg:space-x-4"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             {TAB_DATA.map(({ id, title }) => (
               <TabButton
                 key={id}
