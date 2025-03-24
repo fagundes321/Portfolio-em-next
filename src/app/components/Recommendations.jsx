@@ -56,37 +56,49 @@ const Recommendations = () => {
             }
             subtitle={<p className="text-[#ADB7BE] text-sm text-left whitespace-pre-line">{person.role}</p>}
             title={
-              <div className="flex items-center justify-between w-full">
-                <div className="flex items-center">
-                  <p className="text-left text-sm sm:text-base hidden md:block">
+              <div className="flex items-center w-full">
+                <div className="flex-1 text-left">
+                  <p className="text-sm sm:text-base hidden md:block">
                     {person.name}
                   </p>
-                  <p className="text-left text-sm sm:text-base md:hidden">
+                  <p className="text-sm sm:text-base md:hidden">
                     {person.shortName}
                   </p>
                 </div>
-                <a
-                  href={person.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="bx bxl-linkedin-square text-xl sm:text-2xl text-gray-500"></i>
-                </a>
+                <div className="flex items-center gap-2">
+                  <a
+                    href={person.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="bx bxl-linkedin-square text-xl sm:text-2xl text-gray-500"></i>
+                  </a>
+                  <span
+                    aria-hidden="true"
+                    className={`text-gray-400 transition-transform duration-300 ${
+                      expanded === person.id ? "rotate-90" : "rotate-0"
+                    }`}
+                  >
+                    <svg 
+                      aria-hidden="true"
+                      fill="none"
+                      focusable="false"
+                      height="1em"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                      width="1em"
+                    >
+                      
+                    </svg>
+                  </span>
+                </div>
               </div>
             }
             className="border-b border-[#33353F]"
             onClick={() => toggleAccordion(person.id)}
           >
-            <div className="flex justify-between items-start">
-              <div className="flex-1">{person.description}</div>
-              <span
-                aria-hidden="true"
-                className={`transition-transform duration-300 ease-in-out ${
-                  expanded === person.id ? "rotate-180" : "rotate-0"
-                } text-gray-400 ml-4`}
-              >
-                
-              </span>
+            <div className="text-left">
+              {person.description}
             </div>
           </AccordionItem>
         ))}
