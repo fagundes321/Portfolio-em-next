@@ -112,7 +112,7 @@ const AboutSection = () => {
           <h2 className="text-4xl font-bold text-white mb-4">&lt;Sobre/&gt;</h2>
           <p className="text-base lg:text-lg">{sobre_mim}</p>
           <div
-            className="grid grid-cols-2 gap-4 mt-8"
+            className="grid grid-cols-2 gap-4 mt-8 sm:flex sm:flex-wrap sm:justify-start"
             data-aos="fade-up"
             data-aos-duration="1000"
           >
