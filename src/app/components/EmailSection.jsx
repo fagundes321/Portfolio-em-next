@@ -43,13 +43,13 @@ const EmailSection = () => {
         <h5 className="text-xl font-bold text-white my-2">
           Vamos nos conectar
         </h5>
-        <p className="text-[#ADB7BE] mb-4 max-w-md">
+        <p className="text-[#ADB7BE] mb-4 max-w-md sm:text-justify text-left">
           Atualmente, estou em busca de novas oportunidades profissionais e
           aberto a conexões estratégicas. Caso deseje discutir oportunidades,
           esclarecer dúvidas ou explorar possíveis parcerias, sinta-se à vontade
           para entrar em contato.
         </p>
-        <div className="socials flex flex-row gap-2">
+        <div className="socials flex flex-col sm:flex-row gap-4 sm:justify-start justify-center sm:items-start items-center">
           <div className="flex items-center gap-4">
             {[
               { href: "https://github.com/fagundes321", icon: "github" },

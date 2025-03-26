@@ -6,8 +6,8 @@ import TabButton from "./TabButton";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Recommendations from "./Recommendations";
+import Certifications from "./Certifications";
 import { useSwipeable } from "react-swipeable";
-
 const sharedTransition = { duration: 0.3, ease: "easeInOut" };
 
 const sobre_mim =
@@ -45,12 +45,8 @@ const TAB_DATA = [
   {
     title: "Certificações",
     id: "certificacoes",
-    content: (
-      <ul className="list-disc pl-2">
-        <li>Certificado Alura React</li>
-        <li>Certificado Senai</li>
-      </ul>
-    ),
+    content: <Certifications/>
+   
   },
   {
     title: "Recomendações",
@@ -94,13 +90,16 @@ const AboutSection = () => {
           data-aos="fade-up"
           data-aos-duration="1000"
         >
-          <Image
-            src="/images/hero-image3.png"
-            alt="my photo"
-            width={500}
-            height={500}
-            className="rounded-full"
-          />
+          {/* Ajustando a imagem para que fique proporcional e responsiva */}
+          <div className="relative w-full max-w-[250px] md:max-w-[350px] mx-auto mb-8">
+            <Image
+              src="/images/hero-image3.png"
+              alt="my photo"
+              width={500}
+              height={500}
+              className="rounded-full w-full h-auto object-cover"
+            />
+          </div>
         </div>
 
         <div
@@ -110,7 +109,7 @@ const AboutSection = () => {
           {...handlers}
         >
           <h2 className="text-4xl font-bold text-white mb-4">&lt;Sobre/&gt;</h2>
-          <p className="text-base lg:text-lg">{sobre_mim}</p>
+          <p className="text-base lg:text-lg text-justify">{sobre_mim}</p> {/* Texto justificado */}
           <div
             className="grid grid-cols-2 gap-4 mt-8 sm:flex sm:flex-wrap sm:justify-start"
             data-aos="fade-up"
