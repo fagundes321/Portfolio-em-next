@@ -7,30 +7,32 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Recommendations from "./Recommendations";
 import Certifications from "./Certifications";
+import Skills from "./Skills";
 import { useSwipeable } from "react-swipeable";
+
 const sharedTransition = { duration: 0.3, ease: "easeInOut" };
 
 const sobre_mim =
-"   Sou um desenvolvedor full stack apaixonado por criar aplicações web interativas e responsivas. Tenho experiência com JavaScript, React, Next.js, Angular, Node.js, Docker, HTML, CSS e Git. Sou um aprendiz rápido e estou sempre buscando expandir meus conhecimentos e habilidades. Trabalho bem em equipe e estou animado para colaborar com outras pessoas na criação de aplicações incríveis.";
+  "Sou um desenvolvedor full stack apaixonado por criar aplicações web interativas e responsivas. Tenho experiência com JavaScript, React, Next.js, Angular, Node.js, Docker, HTML, CSS e Git. Sou um aprendiz rápido e estou sempre buscando expandir meus conhecimentos e habilidades. Trabalho bem em equipe e estou animado para colaborar com outras pessoas na criação de aplicações incríveis.";
+
+
+const TechBadge = ({ name, icon }) => (
+  <div className="flex items-center gap-2 rounded-xl border border-white/20 bg-neutral-900 px-3 py-1 text-sm">
+    <Image
+      src={`https://cdn.simpleicons.org/${icon}`}
+      alt={name}
+      width={16}
+      height={16}
+    />
+    {name}
+  </div>
+);
 
 const TAB_DATA = [
   {
     title: "Skills",
     id: "skills",
-    content: (
-      <ul className="list-disc pl-2 columns-2 space-y-1">
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>TypeScript</li>
-        <li>Next.js</li>
-        <li>React</li>
-        <li>Angular</li>
-        <li>Tailwind</li>
-        <li>Docker</li>
-        <li>Linux</li>
-      </ul>
-    ),
+    content: <Skills />,
   },
   {
     title: "Educação",
@@ -45,8 +47,7 @@ const TAB_DATA = [
   {
     title: "Certificações",
     id: "certificacoes",
-    content: <Certifications/>
-   
+    content: <Certifications />,
   },
   {
     title: "Recomendações",
@@ -90,7 +91,6 @@ const AboutSection = () => {
           data-aos="fade-up"
           data-aos-duration="1000"
         >
-          {/* Ajustando a imagem para que fique proporcional e responsiva */}
           <div className="relative w-full max-w-[250px] md:max-w-[350px] mx-auto mb-8">
             <Image
               src="/images/hero-image3.png"
@@ -109,7 +109,8 @@ const AboutSection = () => {
           {...handlers}
         >
           <h2 className="text-4xl font-bold text-white mb-4">&lt;Sobre/&gt;</h2>
-          <p className="text-base lg:text-lg text-justify">{sobre_mim}</p> {/* Texto justificado */}
+          <p className="text-base lg:text-lg text-justify">{sobre_mim}</p>
+
           <div
             className="grid grid-cols-2 gap-4 mt-8 sm:flex sm:flex-wrap sm:justify-start"
             data-aos="fade-up"
@@ -140,6 +141,8 @@ const AboutSection = () => {
               {TAB_DATA.find((t) => t.id === tab)?.content}
             </motion.div>
           </AnimatePresence>
+
+          
         </div>
       </div>
     </section>
