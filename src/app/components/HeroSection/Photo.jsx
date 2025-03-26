@@ -10,10 +10,10 @@ const Photo = () => {
   useEffect(() => {
     const updateSize = () => {
       if (window.innerWidth < 640) {
-        setCircleSize(258); // Tamanho menor para mobile
-        setDashArray("8 10 15 15"); // Ajustando o dash para telas menores
+        setCircleSize(258);
+        setDashArray("8 10 15 15"); 
       } else {
-        setCircleSize(250); // Tamanho normal para desktop
+        setCircleSize(250); 
         setDashArray("15 12 25 25");
       }
     };
@@ -25,9 +25,8 @@ const Photo = () => {
   }, []);
 
   return (
-    <div className="w-full h-full relative mt-16 bg"> {/* Adicionando uma margem superior */}
+    <div className="w-full h-full relative mt-16 bg">
       <motion.div>
-        {/* Container da imagem centralizado */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] xl:w-[490px] xl:h-[490px] rounded-full overflow-hidden mix-blend-lighten">
           <Image
             src="/images/hero-image.jpg"

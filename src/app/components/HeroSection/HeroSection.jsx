@@ -1,10 +1,9 @@
 "use client";
-import React from "react";
-import { TypeAnimation } from "react-type-animation";
-import "boxicons/css/boxicons.min.css";
-import "animate.css";
-import Photo from "./Photo";
 import { Tooltip } from "@heroui/tooltip";
+import "animate.css";
+import "boxicons/css/boxicons.min.css";
+import { TypeAnimation } from "react-type-animation";
+import Photo from "./Photo";
 
 const HeroSection = () => {
   return (
@@ -39,7 +38,7 @@ const HeroSection = () => {
                 display: "inline-block",
                 color: "white",
               }}
-              className="text-3xl lg:text-4xl" 
+              className="text-3xl lg:text-4xl"
               repeat={Infinity}
             />
           </h1>
@@ -123,7 +122,7 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-        {/* Foto */}
+
         <div className="order-1 xl:order-none mb-6 xl:mb-0 col-span-12 sm:col-span-5 place-self-center mt-6 animate__animated animate__slow animate__fadeInRight">
           <Photo />
         </div>
