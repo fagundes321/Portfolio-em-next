@@ -37,19 +37,20 @@ const EmailSection = () => {
   };
 
   return (
-    <section className="grid md:grid-cols-2 my-12 py-70 gap-4" id="contato">
-      <div>
-        <h5 className="text-xl font-bold text-white my-2" data-aos="fade-right">
+    <section className="grid grid-cols-1 md:grid-cols-2 my-12 py-10 gap-4 mt-28" id="contato">
+      {/* Aumento do mt-28 para descer ainda mais a seção */}
+      <div className="flex flex-col justify-center">
+        <h5 className="text-xl font-bold text-white my-2">
           Vamos nos conectar
         </h5>
-        <p className="text-[#ADB7BE] mb-4 max-w-md" data-aos="fade-right">
+        <p className="text-[#ADB7BE] mb-4 max-w-md">
           Atualmente, estou em busca de novas oportunidades profissionais e
           aberto a conexões estratégicas. Caso deseje discutir oportunidades,
           esclarecer dúvidas ou explorar possíveis parcerias, sinta-se à vontade
           para entrar em contato.
         </p>
         <div className="socials flex flex-row gap-2">
-          <div className="flex items-center gap-4" data-aos="fade-right">
+          <div className="flex items-center gap-4">
             {[
               { href: "https://github.com/fagundes321", icon: "github" },
               {
@@ -74,9 +75,9 @@ const EmailSection = () => {
           </div>
         </div>
       </div>
-      <div>
+      <div className="flex flex-col justify-center">
         {emailSubmitted ? (
-          <p className="text-green-400 text-center text-lg" data-aos="zoom-in">
+          <p className="text-green-400 text-center text-lg">
             ✅ Sua mensagem foi enviada com sucesso!
           </p>
         ) : (
@@ -86,19 +87,11 @@ const EmailSection = () => {
             method="POST"
             onSubmit={handleSubmit}
           >
-            {/* Campos ocultos do FormSubmit */}
             <input type="hidden" name="_captcha" value="false" />
-            <input
-              type="hidden"
-              name="_subject"
-              value="Nova mensagem do portfólio"
-            />
+            <input type="hidden" name="_subject" value="Nova mensagem do portfólio" />
 
             <div className="mb-6">
-              <label
-                htmlFor="name"
-                className="text-white block mb-2 text-sm font-medium"
-              >
+              <label htmlFor="name" className="text-white block mb-2 text-sm font-medium">
                 Nome
               </label>
               <input
@@ -112,10 +105,7 @@ const EmailSection = () => {
             </div>
 
             <div className="mb-6">
-              <label
-                htmlFor="email"
-                className="text-white block mb-2 text-sm font-medium"
-              >
+              <label htmlFor="email" className="text-white block mb-2 text-sm font-medium">
                 Seu E-mail
               </label>
               <input
@@ -128,10 +118,7 @@ const EmailSection = () => {
               />
             </div>
             <div className="mb-6">
-              <label
-                htmlFor="subject"
-                className="text-white block mb-2 text-sm font-medium"
-              >
+              <label htmlFor="subject" className="text-white block mb-2 text-sm font-medium">
                 Assunto
               </label>
               <input
@@ -144,10 +131,7 @@ const EmailSection = () => {
               />
             </div>
             <div className="mb-6">
-              <label
-                htmlFor="message"
-                className="text-white block text-sm mb-2 font-medium"
-              >
+              <label htmlFor="message" className="text-white block text-sm mb-2 font-medium">
                 Mensagem
               </label>
               <textarea
