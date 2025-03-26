@@ -9,7 +9,7 @@ const Certifications = () => {
     setExpanded(expanded === index ? null : index);
   };
 
-  const recommendations = [
+  const Certification = [
     {
       id: 1,
       name: "Curso de Desenvolvimento Web",
@@ -73,12 +73,54 @@ const Certifications = () => {
         </a>
       ),
     },
+    {
+      id: 4,
+      name: "Curso de React e Redux",
+      shortName: "React & Redux",
+      role: "Framework Frontend",
+      img: "images/certifications/senai.jpeg",
+      certification: "https://drive.google.com/file/d/1Dv8PIqxraZK_N6GNQk4_UnvxDUuxKlUB/view",
+      description:
+        "Curso aprofundado sobre React, Hooks e Redux, com foco na criação de aplicações modernas e escaláveis para a web.",
+      certificationLink: (
+        <a
+          href="https://drive.google.com/file/d/1Dv8PIqxraZK_N6GNQk4_UnvxDUuxKlUB/view"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#7CF03D] flex items-center space-x-2" 
+        >
+          <i className="bx bx-award text-xl text-[#7CF03D]"></i>
+          <span>Ver Certificado</span>
+        </a>
+      ),
+    },
+    {
+      id: 5,
+      name: "Curso de React e Redux",
+      shortName: "React & Redux",
+      role: "Framework Frontend",
+      img: "images/certifications/senai.jpeg",
+      certification: "https://drive.google.com/file/d/1Dv8PIqxraZK_N6GNQk4_UnvxDUuxKlUB/view",
+      description:
+        "Curso aprofundado sobre React, Hooks e Redux, com foco na criação de aplicações modernas e escaláveis para a web.",
+      certificationLink: (
+        <a
+          href="https://drive.google.com/file/d/1Dv8PIqxraZK_N6GNQk4_UnvxDUuxKlUB/view"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#7CF03D] flex items-center space-x-2" 
+        >
+          <i className="bx bx-award text-xl text-[#7CF03D]"></i>
+          <span>Ver Certificado</span>
+        </a>
+      ),
+    },
   ];
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 max-h-[400px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
       <Accordion variant="splitted">
-        {recommendations.map((person) => (
+        {Certification.map((person) => (
           <AccordionItem
             key={person.id}
             aria-label={person.name}
