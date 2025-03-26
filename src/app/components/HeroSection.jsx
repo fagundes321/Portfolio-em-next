@@ -8,8 +8,8 @@ import { Tooltip } from "@heroui/tooltip";
 
 const HeroSection = () => {
   return (
-    <section id="inicio">
-      <div className="grid items-center grid-cols-1 sm:grid-cols-12 h-[85vh]">
+    <section id="inicio" className="w-full max-w-screen-xl mx-auto py-16 px-4">
+      <div className="grid items-center grid-cols-1 sm:grid-cols-12">
         {/* Texto e animações */}
         <div className="col-span-12 sm:col-span-7 text-center sm:text-left order-2 xl:order-none animate__animated animate__slow animate__fadeInLeft">
           <h1 className="text-white mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold">

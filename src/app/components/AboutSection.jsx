@@ -11,7 +11,7 @@ import { useSwipeable } from "react-swipeable";
 const sharedTransition = { duration: 0.3, ease: "easeInOut" };
 
 const sobre_mim =
-  "Sou um desenvolvedor full stack apaixonado por criar aplicações web interativas e responsivas. Tenho experiência com JavaScript, React, Next.js, Angular, Node.js, Docker, HTML, CSS e Git. Sou um aprendiz rápido e estou sempre buscando expandir meus conhecimentos e habilidades. Trabalho bem em equipe e estou animado para colaborar com outras pessoas na criação de aplicações incríveis.";
+"   Sou um desenvolvedor full stack apaixonado por criar aplicações web interativas e responsivas. Tenho experiência com JavaScript, React, Next.js, Angular, Node.js, Docker, HTML, CSS e Git. Sou um aprendiz rápido e estou sempre buscando expandir meus conhecimentos e habilidades. Trabalho bem em equipe e estou animado para colaborar com outras pessoas na criação de aplicações incríveis.";
 
 const TAB_DATA = [
   {
@@ -85,13 +85,12 @@ const AboutSection = () => {
 
   return (
     <section
-      className="w-full max-w-screen-xl mx-auto text-white py-16 px-4"
+      className="text-white md:grid gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16"
       id="sobre"
     >
-      <div className="grid md:grid-cols-2 gap-8 items-center">
-        {/* Imagem */}
+      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
         <div
-          className="flex justify-center"
+          className="flex justify-center mb-4 md:mb-0"
           data-aos="fade-up"
           data-aos-duration="1000"
         >
@@ -104,19 +103,16 @@ const AboutSection = () => {
           />
         </div>
 
-        {/* Texto e Tabs */}
         <div
-          className="text-center md:text-left flex flex-col h-full"
+          className="text-left flex flex-col h-full"
           data-aos="fade-up"
           data-aos-duration="1000"
           {...handlers}
         >
           <h2 className="text-4xl font-bold text-white mb-4">&lt;Sobre/&gt;</h2>
           <p className="text-base lg:text-lg">{sobre_mim}</p>
-
-          {/* Tabs */}
           <div
-            className="grid grid-cols-2 gap-4 mt-8 sm:flex sm:flex-wrap sm:justify-center md:justify-start"
+            className="grid grid-cols-2 gap-4 mt-8 sm:flex sm:flex-wrap sm:justify-start"
             data-aos="fade-up"
             data-aos-duration="1000"
           >
@@ -133,7 +129,6 @@ const AboutSection = () => {
             ))}
           </div>
 
-          {/* Conteúdo das Tabs */}
           <AnimatePresence mode="wait">
             <motion.div
               key={tab}
