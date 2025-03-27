@@ -10,7 +10,9 @@ const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
 
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
+    AOS.init({
+      duration: 1000,
+    });
   }, []);
 
   const handleSubmit = async (e) => {
@@ -41,12 +43,8 @@ const EmailSection = () => {
   };
 
   return (
-    <section
-      className="grid grid-cols-1 md:grid-cols-2 my-12 py-10 gap-4 mt-28"
-      id="contato"
-      data-aos="fade-up"
-    >
-      <div className="flex flex-col justify-center" data-aos="fade-right">
+    <section className="grid grid-cols-1 md:grid-cols-2 my-12 py-10 gap-4 mt-28" id="contato">
+      <div className="flex flex-col justify-start" data-aos="fade-up">
         <h5 className="text-xl font-bold text-white my-2">
           Vamos nos conectar
         </h5>
@@ -56,10 +54,7 @@ const EmailSection = () => {
           esclarecer dúvidas ou explorar possíveis parcerias, sinta-se à vontade
           para entrar em contato.
         </p>
-        <div
-          className="socials flex flex-col sm:flex-row gap-4 sm:justify-start justify-center sm:items-start items-center"
-          data-aos="fade-right"
-        >
+        <div className="socials flex flex-col sm:flex-row gap-4 sm:justify-start justify-center sm:items-start items-center">
           <div className="flex items-center gap-4">
             {[
               { href: "https://github.com/fagundes321", icon: "github" },
@@ -78,7 +73,6 @@ const EmailSection = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-12 h-12 border-2 border-[#7CF03D] text-[#7CF03D] rounded-full text-2xl transition-all duration-300 hover:bg-[#7CF03D] hover:text-[#1f242d] hover:shadow-[0_0_10px_#7CF03D]"
-                data-aos="zoom-in"
               >
                 <i className={`bx bxl-${icon}`}></i>
               </a>
@@ -86,7 +80,7 @@ const EmailSection = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col justify-center" data-aos="fade-left">
+      <div className="flex flex-col justify-center">
         {emailSubmitted ? (
           <p className="text-green-400 text-center text-lg">
             ✅ Sua mensagem foi enviada com sucesso!
@@ -97,12 +91,11 @@ const EmailSection = () => {
             action="https://formsubmit.co/victorfagundes123@gmail.com"
             method="POST"
             onSubmit={handleSubmit}
-            data-aos="fade-left"
           >
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_subject" value="Nova mensagem do portfólio" />
 
-            <div className="mb-6" data-aos="fade-up">
+            <div className="mb-6">
               <label htmlFor="name" className="text-white block mb-2 text-sm font-medium">
                 Nome
               </label>
@@ -116,7 +109,7 @@ const EmailSection = () => {
               />
             </div>
 
-            <div className="mb-6" data-aos="fade-up" data-aos-delay="100">
+            <div className="mb-6">
               <label htmlFor="email" className="text-white block mb-2 text-sm font-medium">
                 Seu E-mail
               </label>
@@ -129,8 +122,7 @@ const EmailSection = () => {
                 placeholder="nome@gmail.com"
               />
             </div>
-
-            <div className="mb-6" data-aos="fade-up" data-aos-delay="200">
+            <div className="mb-6">
               <label htmlFor="subject" className="text-white block mb-2 text-sm font-medium">
                 Assunto
               </label>
@@ -143,8 +135,7 @@ const EmailSection = () => {
                 placeholder="Apenas dizendo oi"
               />
             </div>
-
-            <div className="mb-6" data-aos="fade-up" data-aos-delay="300">
+            <div className="mb-6">
               <label htmlFor="message" className="text-white block text-sm mb-2 font-medium">
                 Mensagem
               </label>
@@ -156,12 +147,9 @@ const EmailSection = () => {
                 placeholder="Vamos falar sobre..."
               />
             </div>
-
             <button
               type="submit"
               className="bg-[#7CF03D] text-[#1f242d] border-2 border-[#7CF03D] shadow-[0_0_8px_#7CF03D] transition-all duration-300 hover:bg-transparent hover:text-[#7CF03D] hover:shadow-[0_0_10px_#7CF03D] font-semibold py-3 px-6 rounded-xl w-full cursor-pointer"
-              data-aos="fade-up"
-              data-aos-delay="400"
             >
               Enviar Mensagem
             </button>
