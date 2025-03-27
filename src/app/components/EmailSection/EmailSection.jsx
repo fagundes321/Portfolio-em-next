@@ -7,8 +7,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const EmailSection = () => {
-  const [emailSubmitted, setEmailSubmitted] = useState(false);
-
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -30,7 +28,6 @@ const EmailSection = () => {
       });
 
       if (res.ok) {
-        setEmailSubmitted(true);
         toast.success("✅ Sua mensagem foi enviada com sucesso!");
         form.reset();
       } else {
@@ -45,9 +42,7 @@ const EmailSection = () => {
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 my-12 py-10 gap-4 mt-28" id="contato">
       <div className="flex flex-col justify-start" data-aos="fade-up">
-        <h5 className="text-xl font-bold text-white my-2">
-          Vamos nos conectar
-        </h5>
+        <h5 className="text-xl font-bold text-white my-2">Vamos nos conectar</h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md sm:text-justify text-left">
           Atualmente, estou em busca de novas oportunidades profissionais e
           aberto a conexões estratégicas. Caso deseje discutir oportunidades,
@@ -63,7 +58,7 @@ const EmailSection = () => {
                 icon: "linkedin",
               },
               {
-                href: "mailto:victorfagundes123@gmail.com?subject=Contato%20via%20Portfólio&body=Olá%20Victor,%20gostaria%20de%20falar%20com%20você!",
+                href: "mailto:victorfagundes123@gmail.com?subject=Contato%20via%20Portf%C3%B3lio&body=Ol%C3%A1%20Victor,%20gostaria%20de%20falar%20com%20voc%C3%AA!",
                 icon: "gmail",
               },
             ].map(({ href, icon }) => (
@@ -81,80 +76,78 @@ const EmailSection = () => {
         </div>
       </div>
       <div className="flex flex-col justify-center">
-        {emailSubmitted ? (
-          <p className="text-green-400 text-center text-lg">
-            ✅ Sua mensagem foi enviada com sucesso!
-          </p>
-        ) : (
-          <form
-            className="flex flex-col"
-            action="https://formsubmit.co/victorfagundes123@gmail.com"
-            method="POST"
-            onSubmit={handleSubmit}
+        <form
+          className="flex flex-col"
+          action="https://formsubmit.co/victorfagundes123@gmail.com"
+          method="POST"
+          onSubmit={handleSubmit}
+        >
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_subject" value="Nova mensagem do portfólio" />
+
+          <div className="mb-6">
+            <label htmlFor="name" className="text-white block mb-2 text-sm font-medium">
+              Nome
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              placeholder="Seu nome"
+            />
+          </div>
+
+          <div className="mb-6">
+            <label htmlFor="email" className="text-white block mb-2 text-sm font-medium">
+              Seu E-mail
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              placeholder="nome@gmail.com"
+            />
+          </div>
+
+          <div className="mb-6">
+            <label htmlFor="subject" className="text-white block mb-2 text-sm font-medium">
+              Assunto
+            </label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              required
+              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              placeholder="Apenas dizendo oi"
+            />
+          </div>
+
+          <div className="mb-6">
+            <label htmlFor="message" className="text-white block text-sm mb-2 font-medium">
+              Mensagem
+            </label>
+            <textarea
+              name="message"
+              id="message"
+              required
+              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              placeholder="Vamos falar sobre..."
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="bg-[#7CF03D] text-[#1f242d] border-2 border-[#7CF03D] shadow-[0_0_8px_#7CF03D] transition-all duration-300 hover:bg-transparent hover:text-[#7CF03D] hover:shadow-[0_0_10px_#7CF03D] font-semibold py-3 px-6 rounded-xl w-full cursor-pointer"
           >
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_subject" value="Nova mensagem do portfólio" />
+            Enviar Mensagem
+          </button>
+        </form>
 
-            <div className="mb-6">
-              <label htmlFor="name" className="text-white block mb-2 text-sm font-medium">
-                Nome
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Seu nome"
-              />
-            </div>
-
-            <div className="mb-6">
-              <label htmlFor="email" className="text-white block mb-2 text-sm font-medium">
-                Seu E-mail
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="nome@gmail.com"
-              />
-            </div>
-            <div className="mb-6">
-              <label htmlFor="subject" className="text-white block mb-2 text-sm font-medium">
-                Assunto
-              </label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Apenas dizendo oi"
-              />
-            </div>
-            <div className="mb-6">
-              <label htmlFor="message" className="text-white block text-sm mb-2 font-medium">
-                Mensagem
-              </label>
-              <textarea
-                name="message"
-                id="message"
-                required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Vamos falar sobre..."
-              />
-            </div>
-            <button
-              type="submit"
-              className="bg-[#7CF03D] text-[#1f242d] border-2 border-[#7CF03D] shadow-[0_0_8px_#7CF03D] transition-all duration-300 hover:bg-transparent hover:text-[#7CF03D] hover:shadow-[0_0_10px_#7CF03D] font-semibold py-3 px-6 rounded-xl w-full cursor-pointer"
-            >
-              Enviar Mensagem
-            </button>
-          </form>
-        )}
         <ToastContainer
           position="top-right"
           autoClose={5000}

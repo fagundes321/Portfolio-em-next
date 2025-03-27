@@ -7,7 +7,7 @@ import Photo from "./Photo";
 
 const HeroSection = () => {
   return (
-    <section id="inicio" className="w-full max-w-screen-xl mx-auto py-16 px-4">
+    <section id="inicio" className="w-full max-w-screen-xl mx-auto py-8 sm:py-35 px-4">
       <div className="grid items-center grid-cols-1 sm:grid-cols-12">
         {/* Texto e animações */}
         <div className="col-span-12 sm:col-span-7 text-center sm:text-left order-2 xl:order-none animate__animated animate__slow animate__fadeInLeft">
