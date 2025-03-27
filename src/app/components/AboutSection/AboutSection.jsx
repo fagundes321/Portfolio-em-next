@@ -2,7 +2,6 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import Certifications from "./Certifications";
@@ -13,19 +12,7 @@ import TabButton from "./TabButton";
 const sharedTransition = { duration: 0.3, ease: "easeInOut" };
 
 const sobre_mim =
-  "  Sou um desenvolvedor full stack apaixonado por criar aplicações web interativas e responsivas. Tenho experiência com JavaScript, React, Next.js, Angular, Node.js, Docker, HTML, CSS e Git. Sou um aprendiz rápido e estou sempre buscando expandir meus conhecimentos e habilidades. Trabalho bem em equipe e estou animado para colaborar com outras pessoas na criação de aplicações incríveis.";
-
-const TechBadge = ({ name, icon }) => (
-  <div className="flex items-center gap-2 rounded-xl border border-white/20 bg-neutral-900 px-3 py-1 text-sm">
-    <Image
-      src={`https://cdn.simpleicons.org/${icon}`}
-      alt={name}
-      width={16}
-      height={16}
-    />
-    {name}
-  </div>
-);
+  "Sou um desenvolvedor full stack apaixonado por criar aplicações web interativas e responsivas. Tenho experiência com JavaScript, React, Next.js, Angular, Node.js, Docker, HTML, CSS e Git. Sou um aprendiz rápido e estou sempre buscando expandir meus conhecimentos e habilidades. Trabalho bem em equipe e estou animado para colaborar com outras pessoas na criação de aplicações incríveis.";
 
 const TAB_DATA = [
   {
@@ -71,23 +58,40 @@ const AboutSection = () => {
 
   return (
     <section
-      className="text-white md:grid gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16"
+      className="text-white py-8 px-4 xl:px-16 sm:py-45 "
       id="sobre"
     >
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
+      <div className="grid md:grid-cols-2 gap-8 items-center">
         <div
           className="flex justify-center mb-4 md:mb-0"
           data-aos="fade-up"
           data-aos-duration="1000"
         >
-          <div className="relative w-full max-w-[250px] md:max-w-[350px] mx-auto mb-8">
-            <Image
-              src="/images/hero-image3.png"
-              alt="my photo"
-              width={500}
-              height={500}
-              className="rounded-full w-full h-auto object-cover"
-            />
+        <div className="relative w-full max-w-[100%] sm:max-w-[100%] md:max-w-[100%] lg:max-w-[100%] mx-auto mb-8 overflow-hidden rounded-full">
+            <svg
+              className="about__blob"
+              viewBox="0 0 600 500"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {/* Círculo com borda */}
+              <circle
+                cx="260"
+                cy="300"
+                r="200"
+                fill="none"
+                stroke="#7CF03D"
+                strokeWidth="3"
+              />
+              {/* Imagem vazando apenas na parte de cima e centralizada */}
+              <image
+                href="/images/hero-image3.png"
+                x="-10"
+                y="12"
+                width="550"
+                height="550"
+                style={{ clipPath: "circle(38% at 49% 50%)" }} // Forma circular
+              />
+            </svg>
           </div>
         </div>
 
@@ -99,20 +103,13 @@ const AboutSection = () => {
         >
           <h2 className="text-4xl font-bold text-white mb-4">&lt;Sobre/&gt;</h2>
           <p className="text-base lg:text-lg text-justify">{sobre_mim}</p>
-
-          <div
-            className="sm:flex sm:flex-wrap sm:justify-start sm:gap-4 sm:mt-8"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-          >
+          <br />
+          <div className="flex flex-wrap justify-start gap-4 mt-8">
             {TAB_DATA.map(({ id, title }) => (
               <TabButton
                 key={id}
                 selectTab={() => handleTabChange(id)}
                 active={tab === id}
-                data-aos="fade-up"
-                data-aos-duration="1000"
-                className="sm:w-auto w-full mb-2 sm:mb-0"
               >
                 <span className="text-center w-full block">{title}</span>
               </TabButton>

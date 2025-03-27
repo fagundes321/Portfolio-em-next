@@ -27,7 +27,7 @@ const Photo = () => {
   return (
     <div className="w-full h-full relative mt-16 bg">
       <motion.div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] xl:w-[490px] xl:h-[490px] rounded-full overflow-hidden mix-blend-lighten">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] xl:w-[440px] xl:h-[440px] rounded-full overflow-hidden mix-blend-lighten">
           <Image
             src="/images/hero-image.jpg"
             alt="Minha foto"
@@ -40,7 +40,7 @@ const Photo = () => {
 
         {/* SVG de borda */}
         <motion.svg
-          className="w-[250px] sm:w-[300px] xl:w-[506px] h-[250px] sm:h-[300px] xl:h-[506px]"
+          className="w-[250px] sm:w-[300px] xl:w-[506px] h-[250px] sm:h-[300px] xl:h-[456px]"
           fill="transparent"
           viewBox="0 0 506 506"
           xmlns="http://www.w3.org/2000/svg"

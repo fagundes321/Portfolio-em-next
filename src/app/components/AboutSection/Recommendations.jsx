@@ -45,7 +45,7 @@ const Recommendations = () => {
   ];
 
   return (
-    <div className="space-y-4 max-h-[400px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
+    <div className="space-y-4 max-h-[400px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800 p-[20px] m-[-50px]">
       <Accordion variant="splitted">
         {recommendations.map((person) => (
           <AccordionItem

@@ -13,10 +13,10 @@ const Certifications = () => {
   const Certification = [
     {
       id: 1,
-      name: "Curso de Desenvolvimento Web",
-      shortName: "Dev Web",
-      role: "Formação Full Stack",
-      img: "/images/certifications/alura.jpeg",
+      name: "Análise e Desenvolvimento de Sistemas",
+      shortName: "ADS",
+      role: "Universidade Cruzeiro do Sul",
+      img: "/images/certifications/udf.jpeg",
       certification: "https://drive.google.com/file/d/1Dv8PIqxraZK_N6GNQk4_UnvxDUuxKlUB/view",
       description:
         "Curso intensivo focado em tecnologias web como HTML, CSS, JavaScript e Node.js. Ideal para quem deseja se tornar um desenvolvedor full stack completo.",
@@ -25,7 +25,7 @@ const Certifications = () => {
       id: 2,
       name: "Curso de Python para Data Science",
       shortName: "Python DS",
-      role: "Especialização em Data Science",
+      role: "Universidade Cruzeiro do Sul",
       img: "/images/certifications/techers.jpeg",
       certification: "https://drive.google.com/file/d/1Dv8PIqxraZK_N6GNQk4_UnvxDUuxKlUB/view",
       description:
@@ -44,7 +44,7 @@ const Certifications = () => {
   ];
 
   return (
-    <div className="space-y-4 max-h-[400px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
+    <div className="space-y-4 max-h-[400px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800 p-[20px] m-[-50px]">
       <Accordion variant="splitted">
         {Certification.map((person) => (
           <AccordionItem
