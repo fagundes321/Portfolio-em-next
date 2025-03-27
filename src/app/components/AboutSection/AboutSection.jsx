@@ -34,18 +34,8 @@ const TAB_DATA = [
     content: <Skills />,
   },
   {
-    title: "Educação",
-    id: "educacao",
-    content: (
-      <ul className="list-disc pl-2">
-        <li>Cursando Análise e Desenvolvimento de Sistemas</li>
-        <li>Curso</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Certificações",
-    id: "certificacoes",
+    title: "Certificados",
+    id: "certificados",
     content: <Certifications />,
   },
   {
@@ -111,7 +101,7 @@ const AboutSection = () => {
           <p className="text-base lg:text-lg text-justify">{sobre_mim}</p>
 
           <div
-            className="grid grid-cols-2 gap-4 mt-8 sm:flex sm:flex-wrap sm:justify-start"
+            className="sm:flex sm:flex-wrap sm:justify-start sm:gap-4 sm:mt-8"
             data-aos="fade-up"
             data-aos-duration="1000"
           >
@@ -122,6 +112,7 @@ const AboutSection = () => {
                 active={tab === id}
                 data-aos="fade-up"
                 data-aos-duration="1000"
+                className="sm:w-auto w-full mb-2 sm:mb-0"
               >
                 <span className="text-center w-full block">{title}</span>
               </TabButton>
