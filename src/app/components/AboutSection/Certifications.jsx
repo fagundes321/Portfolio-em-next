@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Accordion, AccordionItem, Avatar } from "@heroui/react";
+import { Accordion, AccordionItem } from "@heroui/react";
+import Image from "next/image";
 import "boxicons/css/boxicons.min.css";
 
 const Certifications = () => {
@@ -15,106 +16,31 @@ const Certifications = () => {
       name: "Curso de Desenvolvimento Web",
       shortName: "Dev Web",
       role: "Formação Full Stack",
-      img: "images/certifications/alura.jpeg",
+      img: "/images/certifications/alura.jpeg",
       certification: "https://drive.google.com/file/d/1Dv8PIqxraZK_N6GNQk4_UnvxDUuxKlUB/view",
       description:
         "Curso intensivo focado em tecnologias web como HTML, CSS, JavaScript e Node.js. Ideal para quem deseja se tornar um desenvolvedor full stack completo.",
-      certificationLink: (
-        <a
-          href="https://drive.google.com/file/d/1Dv8PIqxraZK_N6GNQk4_UnvxDUuxKlUB/view"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[#7CF03D] flex items-center space-x-2" 
-        >
-          <i className="bx bx-award text-xl text-[#7CF03D]"></i>
-          <span>Ver Certificado</span>
-        </a>
-      ),
     },
     {
       id: 2,
       name: "Curso de Python para Data Science",
       shortName: "Python DS",
       role: "Especialização em Data Science",
-      img: "images/certifications/techers.jpeg",
+      img: "/images/certifications/techers.jpeg",
       certification: "https://drive.google.com/file/d/1Dv8PIqxraZK_N6GNQk4_UnvxDUuxKlUB/view",
       description:
         "Curso focado em Python, bibliotecas como Pandas e Matplotlib, e a aplicação dessas ferramentas para análise de dados e machine learning.",
-      certificationLink: (
-        <a
-          href="https://drive.google.com/file/d/1Dv8PIqxraZK_N6GNQk4_UnvxDUuxKlUB/view"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[#7CF03D] flex items-center space-x-2"
-        >
-          <i className="bx bx-award text-xl text-[#7CF03D]"></i>
-          <span>Ver Certificado</span>
-        </a>
-      ),
     },
     {
       id: 3,
       name: "Curso de React e Redux",
       shortName: "React & Redux",
       role: "Framework Frontend",
-      img: "images/certifications/senai.jpeg",
+      img: "/images/certifications/senai.jpeg",
       certification: "https://drive.google.com/file/d/1Dv8PIqxraZK_N6GNQk4_UnvxDUuxKlUB/view",
       description:
         "Curso aprofundado sobre React, Hooks e Redux, com foco na criação de aplicações modernas e escaláveis para a web.",
-      certificationLink: (
-        <a
-          href="https://drive.google.com/file/d/1Dv8PIqxraZK_N6GNQk4_UnvxDUuxKlUB/view"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[#7CF03D] flex items-center space-x-2" 
-        >
-          <i className="bx bx-award text-xl text-[#7CF03D]"></i>
-          <span>Ver Certificado</span>
-        </a>
-      ),
-    },
-    {
-      id: 4,
-      name: "Curso de React e Redux",
-      shortName: "React & Redux",
-      role: "Framework Frontend",
-      img: "images/certifications/senai.jpeg",
-      certification: "https://drive.google.com/file/d/1Dv8PIqxraZK_N6GNQk4_UnvxDUuxKlUB/view",
-      description:
-        "Curso aprofundado sobre React, Hooks e Redux, com foco na criação de aplicações modernas e escaláveis para a web.",
-      certificationLink: (
-        <a
-          href="https://drive.google.com/file/d/1Dv8PIqxraZK_N6GNQk4_UnvxDUuxKlUB/view"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[#7CF03D] flex items-center space-x-2" 
-        >
-          <i className="bx bx-award text-xl text-[#7CF03D]"></i>
-          <span>Ver Certificado</span>
-        </a>
-      ),
-    },
-    {
-      id: 5,
-      name: "Curso de React e Redux",
-      shortName: "React & Redux",
-      role: "Framework Frontend",
-      img: "images/certifications/senai.jpeg",
-      certification: "https://drive.google.com/file/d/1Dv8PIqxraZK_N6GNQk4_UnvxDUuxKlUB/view",
-      description:
-        "Curso aprofundado sobre React, Hooks e Redux, com foco na criação de aplicações modernas e escaláveis para a web.",
-      certificationLink: (
-        <a
-          href="https://drive.google.com/file/d/1Dv8PIqxraZK_N6GNQk4_UnvxDUuxKlUB/view"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[#7CF03D] flex items-center space-x-2" 
-        >
-          <i className="bx bx-award text-xl text-[#7CF03D]"></i>
-          <span>Ver Certificado</span>
-        </a>
-      ),
-    },
+    }
   ];
 
   return (
@@ -128,7 +54,13 @@ const Certifications = () => {
             hideIndicator={true}
             startContent={
               <div className="flex items-center w-full">
-                <Avatar radius="full" src={person.img} />
+                <Image
+                  src={person.img}
+                  alt={person.name}
+                  width={50}
+                  height={50}
+                  className="rounded-full"
+                />
               </div>
             }
             subtitle={
@@ -163,9 +95,17 @@ const Certifications = () => {
             <div className="flex justify-between items-start">
               <div className="flex-1">
                 {person.description}
-                {person.certificationLink && (
-                  <div className="mt-2">{person.certificationLink}</div>
-                )}
+                <div className="mt-2">
+                  <a
+                    href={person.certification}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#7CF03D] flex items-center space-x-2"
+                  >
+                    <i className="bx bx-award text-xl text-[#7CF03D]"></i>
+                    <span>Ver Certificado</span>
+                  </a>
+                </div>
               </div>
             </div>
           </AccordionItem>

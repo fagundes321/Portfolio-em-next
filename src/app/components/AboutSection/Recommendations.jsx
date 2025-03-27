@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Accordion, AccordionItem, Avatar } from "@heroui/react";
+import Image from "next/image";
 import "boxicons/css/boxicons.min.css";
 
 const Recommendations = () => {
@@ -15,7 +16,7 @@ const Recommendations = () => {
       name: "José Carlos Gonçalves da Costa",
       shortName: "José C.",
       role: "Desenvolvedor Outsystems e PHP",
-      img: "images/avatar/jose_carlos.jpg",
+      img: "/images/avatar/jose_carlos.jpg",
       linkedin:
         "https://www.linkedin.com/in/jos%C3%A9-carlos-gon%C3%A7alves-da-costa-33572a115/",
       description:
@@ -26,7 +27,7 @@ const Recommendations = () => {
       name: "Cleyson Lago de Sousa",
       shortName: "Cleyson L.",
       role: "Desenvolvedor Full Stack \n PHP | Laravel | Python | JavaScript | React | WordPress",
-      img: "images/avatar/cleyson_lago.jpg",
+      img: "/images/avatar/cleyson_lago.jpg",
       linkedin: "https://www.linkedin.com/in/cleysonlago/",
       description:
         "Um jovem talentoso e dedicado que tem se destacado em nossa equipe. Apesar de ser relativamente novo no mundo da programação, ele demonstra uma capacidade impressionante de aprender rapidamente e aplicar conceitos de forma prática. Sua inteligência, aliada a um esforço constante, faz com que ele supere desafios com maestria e entregue resultados de alta qualidade.",
@@ -36,7 +37,7 @@ const Recommendations = () => {
       name: "Bruno Brizon Reis",
       shortName: "Bruno B.",
       role: "Desenvolvedor Full Stack",
-      img: "images/avatar/bruno_brizon.jpg",
+      img: "/images/avatar/bruno_brizon.jpg",
       linkedin: "https://www.linkedin.com/in/bruno-brizon-reis-981a7a78/",
       description:
         "Foi um ótimo aluno, dedicado, inteligente e focado. Sua capacidade de compreensão das linguagens apresentadas e desenvolvimento de raciocínio lógico sempre me surpreenderam. Como profissional tenho certeza que ele se destacará independente do campo. Me orgulho por ter feito parte do caminho dele como profissional de TI e vendo o quanto cresceu me deixa feliz e ver que mais pessoas com amor pela profissão estão entrando no mercado de trabalho.",
@@ -51,10 +52,16 @@ const Recommendations = () => {
             key={person.id}
             aria-label={person.name}
             isOpen={expanded === person.id}
-            hideIndicator={true} 
+            hideIndicator={true}
             startContent={
               <div className="flex items-center w-full">
-                <Avatar radius="full" src={person.img} />
+                <Image
+                  src={person.img}
+                  alt={person.name}
+                  width={50}
+                  height={50}
+                  className="rounded-full"
+                />
               </div>
             }
             subtitle={
