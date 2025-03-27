@@ -11,12 +11,13 @@ const HeroSection = () => {
       <div className="grid items-center grid-cols-1 sm:grid-cols-12">
         {/* Texto e animações */}
         <div className="col-span-12 sm:col-span-7 text-center sm:text-left order-2 xl:order-none animate__animated animate__slow animate__fadeInLeft">
-          <h1 className="text-white mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold">
-            Seja Bem-Vindo!
-          </h1>
-          <h1 className="text-white mb-4 text-2xl sm:text-3xl lg:text-4xl font-bold">
-            Sou Victor Fagundes
-          </h1>
+        <h1 className="text-white mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold whitespace-nowrap">
+  Seja Bem-Vindo!
+</h1>
+<h1 className="text-white mb-4 text-2xl sm:text-3xl lg:text-4xl font-bold whitespace-nowrap">
+  Sou Victor Fagundes
+</h1>
+
           <h1 className="text-[#7cf03d] mb-4 text-3xl sm:text-4xl lg:text-5xl gap-2 font-bold whitespace-nowrap flex flex-col sm:flex-row sm:items-center">
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#5CBF2A] via-[#7CF03D] to-[#2E6B1A]">
               Desenvolvedor{" "}

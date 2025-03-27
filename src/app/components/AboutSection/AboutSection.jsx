@@ -13,7 +13,7 @@ import TabButton from "./TabButton";
 const sharedTransition = { duration: 0.3, ease: "easeInOut" };
 
 const sobre_mim =
-  "Sou um desenvolvedor full stack apaixonado por criar aplicações web interativas e responsivas. Tenho experiência com JavaScript, React, Next.js, Angular, Node.js, Docker, HTML, CSS e Git. Sou um aprendiz rápido e estou sempre buscando expandir meus conhecimentos e habilidades. Trabalho bem em equipe e estou animado para colaborar com outras pessoas na criação de aplicações incríveis.";
+  "  Sou um desenvolvedor full stack apaixonado por criar aplicações web interativas e responsivas. Tenho experiência com JavaScript, React, Next.js, Angular, Node.js, Docker, HTML, CSS e Git. Sou um aprendiz rápido e estou sempre buscando expandir meus conhecimentos e habilidades. Trabalho bem em equipe e estou animado para colaborar com outras pessoas na criação de aplicações incríveis.";
 
 const TechBadge = ({ name, icon }) => (
   <div className="flex items-center gap-2 rounded-xl border border-white/20 bg-neutral-900 px-3 py-1 text-sm">
