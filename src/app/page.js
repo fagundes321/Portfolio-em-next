@@ -1,12 +1,12 @@
 "use client";
 import { useEffect } from "react";
-import HeroSection from "./components/HeroSection";
-import Navbar from "./components/Navbar";
-import AboutSection from "./components/AboutSection";
-import ProjectsSection from "./components/ProjectsSection";
+import AboutSection from "./components/AboutSection/AboutSection";
 import ClickSpark from "./components/ClickSpark/ClickSpark";
-import EmailSection from "./components/EmailSection";
-import Footer from "./components/Footer";
+import EmailSection from "./components/EmailSection/EmailSection";
+import Footer from "./components/Footer/Footer";
+import HeroSection from "./components/HeroSection/HeroSection";
+import Navbar from "./components/Navbar/Navbar";
+import ProjectsSection from "./components/ProjectSection/ProjectsSection";
 
 export default function Home() {
   useEffect(() => {
@@ -31,7 +31,6 @@ export default function Home() {
           <AboutSection />
           <ProjectsSection />
           <EmailSection />
-        
         </div>
         <Footer />
       </ClickSpark>

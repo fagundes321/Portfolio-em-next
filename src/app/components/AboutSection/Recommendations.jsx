@@ -44,14 +44,14 @@ const Recommendations = () => {
   ];
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 max-h-[400px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
       <Accordion variant="splitted">
         {recommendations.map((person) => (
           <AccordionItem
             key={person.id}
             aria-label={person.name}
             isOpen={expanded === person.id}
-            hideIndicator={true} // ✅ REMOVE o indicador padrão do Hero UI
+            hideIndicator={true} 
             startContent={
               <div className="flex items-center w-full">
                 <Avatar radius="full" src={person.img} />
@@ -84,7 +84,6 @@ const Recommendations = () => {
                   >
                     <i className="bx bxl-linkedin-square text-xl sm:text-2xl text-gray-500"></i>
                   </a>
-                  {/* ✅ Ícone da seta agora funciona corretamente */}
                   <i
                     className={`bx bx-chevron-down text-xl text-gray-400 transition-transform duration-300 ease-in-out ${
                       expanded === person.id ? "rotate-180" : "rotate-0"
