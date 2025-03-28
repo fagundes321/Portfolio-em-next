@@ -42,10 +42,20 @@ const Recommendations = () => {
       description:
         "Foi um ótimo aluno, dedicado, inteligente e focado. Sua capacidade de compreensão das linguagens apresentadas e desenvolvimento de raciocínio lógico sempre me surpreenderam. Como profissional tenho certeza que ele se destacará independente do campo. Me orgulho por ter feito parte do caminho dele como profissional de TI e vendo o quanto cresceu me deixa feliz e ver que mais pessoas com amor pela profissão estão entrando no mercado de trabalho.",
     },
+    {
+      id: 4,
+      name: " Giovani Melo",
+      shortName: " Giovani M.",
+      role: "Desenvolvedor Full Stack \n (PHP, Laravel, React, Docker, Oracle, MySQL)",
+      img: "/images/avatar/giovani_melo.jpeg",
+      linkedin: "https://www.linkedin.com/in/giovani-melo-9a9466293/",
+      description:
+        "Tive a oportunidade de trabalhar com Victor e posso dizer com segurança que sua curva de aprendizado e expertise em desenvolvimento de sistemas é excepcional. Destaco sua capacidade de analisar problemas, propor soluções eficientes e escrever código limpo e bem estruturado. Além do conhecimento técnico, Victor é um profissional extremamente colaborativo, sempre disposto em ajudar a equipe. Seu comprometimento e proatividade o torna um profissional talentoso e destacado.",
+    },
   ];
 
   return (
-    <div className="space-y-4 max-h-[400px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800 p-[20px] m-[-50px]">
+    <div className="space-y-4 max-h-[400px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800 p-[20px] sm:m-[-10px] m-[-70px] mt-px ">
       <Accordion variant="splitted">
         {recommendations.map((person) => (
           <AccordionItem
