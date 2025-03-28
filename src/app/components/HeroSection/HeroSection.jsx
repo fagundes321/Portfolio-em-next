@@ -88,7 +88,7 @@ const HeroSection = () => {
           <br />
           {/* Botões */}
           <div className="flex flex-col sm:flex-row gap-4 items-center relative">
-            <button className="flex items-center justify-center w-full sm:w-fit px-6 py-3 gap-3 border-2 border-[#7CF03D] text-[#7CF03D] rounded-full text-lg font-extrabold transition-all duration-300 hover:bg-[#7CF03D] hover:text-[#1f242d] hover:shadow-[0_0_10px_#7CF03D]">
+            <button className="cursor-pointer flex items-center justify-center w-full sm:w-fit px-6 py-3 gap-3 border-2 border-[#7CF03D] text-[#7CF03D] rounded-full text-lg font-extrabold transition-all duration-300 hover:bg-[#7CF03D] hover:text-[#1f242d] hover:shadow-[0_0_10px_#7CF03D]">
               Download CV
               <i className="bx bx-download text-2xl"></i>
             </button>

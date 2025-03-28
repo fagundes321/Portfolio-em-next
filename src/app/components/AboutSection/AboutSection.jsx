@@ -108,14 +108,14 @@ const AboutSection = () => {
           </h1>
           <p className="text-base lg:text-lg text-justify">{sobre_mim}</p>
           <br />
-          <div className="flex flex-wrap justify-start gap-0 sm:gap-1 mt-3 sm:mt-4 sm:mb-0 mb-1 sm:m-0 -m-1 text-[14px] sm:text-[19px]">
+          <div className="flex flex-wrap justify-start gap-0 sm:gap-1 mt-3 sm:mt-4 sm:mb-0 mb-1 sm:m-0 -m-1 text-[14px] sm:text-[19px] ">
             {TAB_DATA.map(({ id, title }) => (
               <TabButton
                 key={id}
                 selectTab={() => handleTabChange(id)}
                 active={tab === id}
               >
-                <span className="text-center w-full block ">{title}</span>
+                <span className="text-center w-full block cursor-pointer">{title}</span>
               </TabButton>
             ))}
           </div>

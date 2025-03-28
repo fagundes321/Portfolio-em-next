@@ -17,7 +17,7 @@ const Skills = () => {
       {techStack.map((tech) => (
         <div
           key={tech.name}
-          className="flex sm:-mb-[30px] items-center text-center gap-4 rounded-xl border border-white/[0.14] bg-[#1f242d] px-15 py-3 text-sm min-w-[135px] sm:min-w-[140px] w-full"
+          className="transition-transform duration-300 hover:scale-110 flex sm:-mb-[30px] items-center text-center gap-4 rounded-xl border border-white/[0.14] bg-[#1f242d] px-15 py-3 text-sm min-w-[135px] sm:min-w-[140px] w-full"
         >
           {tech.icon && <img height="20" width="20" src={tech.icon} alt={tech.name} />}
           <span className="text-white text-center">{tech.name}</span>
