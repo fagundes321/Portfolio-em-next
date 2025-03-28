@@ -74,7 +74,7 @@ const Certifications = () => {
             isOpen={expanded === person.id}
             hideIndicator={true}
             startContent={
-              <div className="flex items-center w-full ">
+              <div className="flex items-center w-full cursor-pointer ">
                 <Image
                   src={person.img}
                   alt={person.name}
@@ -85,7 +85,7 @@ const Certifications = () => {
               </div>
             }
             subtitle={
-              <p className="text-[#ADB7BE] text-sm text-left whitespace-pre-line">
+              <p className="text-[#ADB7BE] text-sm text-left whitespace-pre-line cursor-pointer">
                 {person.role}
               </p>
             }

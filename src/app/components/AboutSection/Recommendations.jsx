@@ -56,7 +56,7 @@ const Recommendations = () => {
   ];
 
   return (
-    <div className="space-y-4 max-h-[400px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800 p-[20px] sm:m-[-10px] m-[-70px] mt-px ">
+    <div className="space-y-4 max-h-[400px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800 p-[20px] sm:m-[-10px] m-[-70px]   mt-px ">
       <Accordion variant="splitted">
         {recommendations.map((person) => (
           <AccordionItem
@@ -65,18 +65,18 @@ const Recommendations = () => {
             isOpen={expanded === person.id}
             hideIndicator={true}
             startContent={
-              <div className="flex items-center w-full">
+              <div className="flex items-center w-full cursor-pointer">
                 <Image
                   src={person.img}
                   alt={person.name}
                   width={50}
                   height={50}
-                  className="rounded-full"
+                  className="rounded-full "
                 />
               </div>
             }
             subtitle={
-              <p className="text-[#ADB7BE] text-sm text-left whitespace-pre-line">
+              <p className="text-[#ADB7BE] text-sm text-left whitespace-pre-line cursor-pointer">
                 {person.role}
               </p>
             }

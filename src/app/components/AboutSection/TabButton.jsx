@@ -11,7 +11,7 @@ const variants = {
 
 const TabButton = ({ active, selectTab, children }) => {
   const buttonClasses = active
-    ? "text-transparent bg-clip-text bg-gradient-to-br from-[#5CBF2A] via-[#7CF03D] to-[#2E6B1A] border-[#7CF03D]"
+    ? "text-[#7CF03D] bg-clip-text bg-gradient-to-br from-[#5CBF2A] via-[#7CF03D] to-[#2E6B1A] border-[#7CF03D]"
     : "text-[#ADB7BE] border-[#ADB7BE]";
   const lineColor = active ? "#7CF03D" : "#ADB7BE";
 
