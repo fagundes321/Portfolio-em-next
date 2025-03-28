@@ -101,7 +101,11 @@ const AboutSection = () => {
           data-aos-duration="1000"
           {...handlers}
         >
-          <h2 className="text-4xl font-bold text-white mb-4">&lt;Sobre/&gt;</h2>
+          <h1 className="text-[#7cf03d] mb-4 text-3xl sm:text-4xl lg:text-5xl gap-2 font-bold whitespace-nowrap flex flex-col sm:flex-row sm:items-center">
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#5CBF2A] via-[#7CF03D] to-[#2E6B1A]">
+            &lt;Sobre/&gt;
+            </span>
+          </h1>
           <p className="text-base lg:text-lg text-justify">{sobre_mim}</p>
           <br />
           <div className="flex flex-wrap justify-start gap-0 sm:gap-1 mt-3 sm:mt-4 sm:mb-0 mb-1 sm:m-0 -m-1 text-[14px] sm:text-[19px]">
