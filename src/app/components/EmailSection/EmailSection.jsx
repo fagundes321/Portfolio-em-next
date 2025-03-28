@@ -42,7 +42,12 @@ const EmailSection = () => {
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 my-12 py-10 gap-4 mt-28" id="contato">
       <div className="flex flex-col justify-start" data-aos="fade-up">
-        <h5 className="text-xl font-bold text-white my-2">Vamos nos conectar</h5>
+      <h5 className="text-[#7cf03d] mb-4 text-xl gap-2 my-2 font-bold whitespace-nowrap flex flex-col sm:flex-row sm:items-center">
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#5CBF2A] via-[#7CF03D] to-[#2E6B1A]">
+            Vamos nos conectar
+            </span>
+          </h5>
+       
         <p className="text-[#ADB7BE] mb-4 max-w-md sm:text-justify text-left">
           Atualmente, estou em busca de novas oportunidades profissionais e
           aberto a conexões estratégicas. Caso deseje discutir oportunidades,
