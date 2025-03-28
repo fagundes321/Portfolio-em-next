@@ -43,9 +43,11 @@ const ProjectsSection = () => {
       id="projetos"
     >
       {/* Wrapper para centralizar o título */}
-      <div className="text-center" data-aos="zoom-in">
-        <h2 className="text-4xl font-bold text-white mt-4">PROJETOS</h2>
-      </div>
+      <h1 className="text-[#7cf03d] mb-4 text-3xl text-center sm:text-4xl lg:text-5xl font-bold  sm:flex-row sm:items-center" data-aos="zoom-in">
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#5CBF2A] via-[#7CF03D] to-[#2E6B1A]">
+            PROJETOS
+            </span>
+          </h1>
       <div
         className="text-white flex fle-row justify-center items-center gap-2 py-6"
         data-aos="zoom-in"
