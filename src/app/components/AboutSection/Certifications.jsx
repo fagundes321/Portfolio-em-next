@@ -40,11 +40,32 @@ const Certifications = () => {
       certification: "https://drive.google.com/file/d/1Dv8PIqxraZK_N6GNQk4_UnvxDUuxKlUB/view",
       description:
         "Curso aprofundado sobre React, Hooks e Redux, com foco na criação de aplicações modernas e escaláveis para a web.",
+    },
+    {
+      id: 4,
+      name: "Curso de React e Redux",
+      shortName: "React & Redux",
+      role: "Framework Frontend",
+      img: "/images/certifications/senai.jpeg",
+      certification: "https://drive.google.com/file/d/1Dv8PIqxraZK_N6GNQk4_UnvxDUuxKlUB/view",
+      description:
+        "Curso aprofundado sobre React, Hooks e Redux, com foco na criação de aplicações modernas e escaláveis para a web.",
+    }
+    ,
+    {
+      id: 5,
+      name: "Curso de React e Redux",
+      shortName: "React & Redux",
+      role: "Framework Frontend",
+      img: "/images/certifications/senai.jpeg",
+      certification: "https://drive.google.com/file/d/1Dv8PIqxraZK_N6GNQk4_UnvxDUuxKlUB/view",
+      description:
+        "Curso aprofundado sobre React, Hooks e Redux, com foco na criação de aplicações modernas e escaláveis para a web.",
     }
   ];
 
   return (
-    <div className="space-y-4 max-h-[400px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800 p-[20px] m-[-50px]">
+    <div className="space-y-4 max-h-[400px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800 p-[20px] sm:m-[-10px] m-[-70px] mt-px">
       <Accordion variant="splitted">
         {Certification.map((person) => (
           <AccordionItem
@@ -53,7 +74,7 @@ const Certifications = () => {
             isOpen={expanded === person.id}
             hideIndicator={true}
             startContent={
-              <div className="flex items-center w-full">
+              <div className="flex items-center w-full ">
                 <Image
                   src={person.img}
                   alt={person.name}

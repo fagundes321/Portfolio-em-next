@@ -58,16 +58,16 @@ const AboutSection = () => {
 
   return (
     <section
-      className="text-white py-8 px-4 xl:px-16 sm:py-45 "
+      className="text-white py-8 px-4 xl:px-16 sm:py-45  "
       id="sobre"
     >
       <div className="grid md:grid-cols-2 gap-8 items-center">
         <div
-          className="flex justify-center mb-4 md:mb-0"
+          className="flex justify-center mb-4 md:mb-0 "
           data-aos="fade-up"
           data-aos-duration="1000"
         >
-        <div className="relative w-full max-w-[100%] sm:max-w-[100%] md:max-w-[100%] lg:max-w-[100%] mx-auto mb-8 overflow-hidden rounded-full">
+        <div className="relative w-full max-w-[100%] sm:max-w-[100%] md:max-w-[100%] lg:max-w-[100%] mx-auto mb-8 overflow-hidden rounded-full ">
             <svg
               className="about__blob"
               viewBox="0 0 600 500"
@@ -104,14 +104,14 @@ const AboutSection = () => {
           <h2 className="text-4xl font-bold text-white mb-4">&lt;Sobre/&gt;</h2>
           <p className="text-base lg:text-lg text-justify">{sobre_mim}</p>
           <br />
-          <div className="flex flex-wrap justify-start gap-4 mt-8">
+          <div className="flex flex-wrap justify-start gap-0 sm:gap-1 mt-3 sm:mt-4 sm:mb-0 mb-1 sm:m-0 -m-1 text-[14px] sm:text-[19px]">
             {TAB_DATA.map(({ id, title }) => (
               <TabButton
                 key={id}
                 selectTab={() => handleTabChange(id)}
                 active={tab === id}
               >
-                <span className="text-center w-full block">{title}</span>
+                <span className="text-center w-full block ">{title}</span>
               </TabButton>
             ))}
           </div>

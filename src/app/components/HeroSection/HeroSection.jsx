@@ -105,9 +105,8 @@ const HeroSection = () => {
                   label: "LinkedIn",
                 },
                 {
-                  href: "mailto:victorfagundes123@gmail.com",
+                  href: "mailto:victorfagundes123@gmail.com?subject=Contato%20via%20Portf%C3%B3lio&body=Ol%C3%A1%20Victor,%20gostaria%20de%20falar%20com%20voc%C3%AA!",
                   icon: "gmail",
-                  label: "E-mail",
                 },
               ].map(({ href, icon, label }) => (
                 <a
