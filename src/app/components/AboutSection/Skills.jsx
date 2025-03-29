@@ -9,6 +9,7 @@ const techStack = [
   { name: "Tailwind", icon: "https://cdn.simpleicons.org/tailwindcss" },
   { name: "Docker", icon: "https://cdn.simpleicons.org/docker" },
   { name: "Linux", icon: "https://cdn.simpleicons.org/linux" },
+  { name: "Node.js", icon: "https://cdn.simpleicons.org/node.js" }, 
 ];
 
 const Skills = () => {
