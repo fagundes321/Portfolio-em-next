@@ -58,6 +58,7 @@ const HeroSection = () => {
               "css",
               "docker",
               "linux",
+              "nodejs",
             ].map((icon) => (
               <Tooltip
                 key={icon}
